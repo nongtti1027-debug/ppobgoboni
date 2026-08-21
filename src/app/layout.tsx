@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -28,6 +29,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         {children}
         <Footer />
+        {adsenseClientId && (
+          // Plain <script>, not next/script: AdSense's site-verification
+          // crawler reads the raw HTML response and needs a literal
+          // <script src="..."> tag rather than next/script's hydration-time
+          // injection.
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
+            crossOrigin="anonymous"
+          />
+        )}
       </body>
     </html>
   );
