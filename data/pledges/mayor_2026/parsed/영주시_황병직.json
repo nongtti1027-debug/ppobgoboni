@@ -1,0 +1,65 @@
+{
+  "politician": "황병직",
+  "hanja_name": "黃炳稙",
+  "party": "국민의힘",
+  "office": "영주시",
+  "sido": "경상북도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100153885",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-영주시_황병직-01",
+      "order": 1,
+      "realm": "",
+      "title": "공설시장 철거 후 주상복합아파트 건설",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영주시_황병직-02",
+      "order": 2,
+      "realm": "",
+      "title": "시청 주차난 해결 ← 시청 주변 산지 활용",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영주시_황병직-03",
+      "order": 3,
+      "realm": "",
+      "title": "기회발전특구 및 규제자유특구 지정을 통한 기업 유치",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영주시_황병직-04",
+      "order": 4,
+      "realm": "",
+      "title": "소백산 국립공원 케이블카 설치",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영주시_황병직-05",
+      "order": 5,
+      "realm": "",
+      "title": "일하는 분위기 조성 확립 통한 시청 민원처리 획기적 개선",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "politician": "하학열",
+  "hanja_name": "河鶴烈",
+  "party": "국민의힘",
+  "office": "고성군",
+  "sido": "경상남도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100159308",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-고성군_하학열-01",
+      "order": 1,
+      "realm": "",
+      "title": "우주항공·방산 첨단산업 클러스터 및 배후도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-고성군_하학열-02",
+      "order": 2,
+      "realm": "",
+      "title": "농림축수산 스마트 가공·유통 혁신 및 ‘G-푸드’ 글로벌화",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-고성군_하학열-03",
+      "order": 3,
+      "realm": "",
+      "title": "교육복지 강화 및 미래 인재 육성 ‘고성형 교육 투자’",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-고성군_하학열-04",
+      "order": 4,
+      "realm": "",
+      "title": "전 생애 맞춤형 의료 돌봄 및 ‘고성형 안심 복지’ 실현",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-고성군_하학열-05",
+      "order": 5,
+      "realm": "",
+      "title": "기업 유치 및 청년·소상공인 맞춤형 일자리 창출",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "politician": "신동화",
+  "hanja_name": "申東和",
+  "party": "더불어민주당",
+  "office": "구리시",
+  "sido": "경기도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100154423",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-구리시_신동화-01",
+      "order": 1,
+      "realm": "",
+      "title": "경기주택도시공사(GH) 주사무소 1년 내 이전 추진",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-구리시_신동화-02",
+      "order": 2,
+      "realm": "",
+      "title": "토평2지구 자족 기능 강화 및 미래산업 유치",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-구리시_신동화-03",
+      "order": 3,
+      "realm": "",
+      "title": "수도권 동·북부 교통 허브 도시",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-구리시_신동화-04",
+      "order": 4,
+      "realm": "",
+      "title": "사노동 e-커머스 복합개발 및 첨단물류 거점 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-구리시_신동화-05",
+      "order": 5,
+      "realm": "",
+      "title": "동구릉 역사문화관광지구 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

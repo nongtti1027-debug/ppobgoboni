@@ -1,0 +1,66 @@
+{
+  "politician": "박완수",
+  "hanja_name": "朴完洙",
+  "party": "국민의힘",
+  "office": "경상남도",
+  "sido": "경상남도",
+  "sgId": "20260603",
+  "sgTypecode": "3",
+  "cnddtId": "100162958",
+  "source": "중앙선거관리위원회 선거공약 정보 API (공식 1차 출처)",
+  "source_api": "ElecPrmsInfoInqireService/getCnddtElecPrmsInfoInqire",
+  "fetched_at": "2026-08-21T03:28:04.484Z",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "gyeongnam_parkwansoo-01",
+      "order": 1,
+      "realm": "",
+      "title": "행복 UP 복지 - 경남도민 멤버십 카드",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "gyeongnam_parkwansoo-02",
+      "order": 2,
+      "realm": "",
+      "title": "경남과 대도시를 잇는 G-버스 도입 추진",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "gyeongnam_parkwansoo-03",
+      "order": 3,
+      "realm": "",
+      "title": "글로벌 제조 피지컬 AI 기반 확충",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "gyeongnam_parkwansoo-04",
+      "order": 4,
+      "realm": "",
+      "title": "경남 청년연금",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "gyeongnam_parkwansoo-05",
+      "order": 5,
+      "realm": "",
+      "title": "경남 여성 HPV 접종 사업",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "politician": "김정중",
+  "hanja_name": "金鼎重",
+  "party": "더불어민주당",
+  "office": "양양군",
+  "sido": "강원특별자치도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100158374",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-양양군_김정중-01",
+      "order": 1,
+      "realm": "",
+      "title": "사계절 축제의 도시 조성 ",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-양양군_김정중-02",
+      "order": 2,
+      "realm": "",
+      "title": "접경지특별법 개정 추진 등",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-양양군_김정중-03",
+      "order": 3,
+      "realm": "",
+      "title": "낙산⇔양양 원스톱 경제벨트 구축 ",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-양양군_김정중-04",
+      "order": 4,
+      "realm": "",
+      "title": "초·중·고등학생 자기계발비 지원",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-양양군_김정중-05",
+      "order": 5,
+      "realm": "",
+      "title": "『고향사랑기부제 100억』실시로 양양이미지 제고 ",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

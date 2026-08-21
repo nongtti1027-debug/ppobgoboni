@@ -1,0 +1,65 @@
+{
+  "politician": "이병래",
+  "hanja_name": "李炳來",
+  "party": "더불어민주당",
+  "office": "남동구",
+  "sido": "인천광역시",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100154310",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-남동구_이병래-01",
+      "order": 1,
+      "realm": "",
+      "title": "미래를 여는 혁신경제도시 남동",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-남동구_이병래-02",
+      "order": 2,
+      "realm": "",
+      "title": "구민이 주인인 ‘참여자치도시’ 남동",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-남동구_이병래-03",
+      "order": 3,
+      "realm": "",
+      "title": "누구도 소외되지 않는 ‘기본사회도시’ 남동",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-남동구_이병래-04",
+      "order": 4,
+      "realm": "",
+      "title": "배우고 즐기며 성장하는 ‘미래활력도시’ 남동",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-남동구_이병래-05",
+      "order": 5,
+      "realm": "",
+      "title": "내 삶이 중심이 되는 ‘지속가능도시’ 남동",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

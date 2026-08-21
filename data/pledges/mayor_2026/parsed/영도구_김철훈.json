@@ -1,0 +1,65 @@
+{
+  "politician": "김철훈",
+  "hanja_name": "金哲熏",
+  "party": "더불어민주당",
+  "office": "영도구",
+  "sido": "부산광역시",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100154799",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-영도구_김철훈-01",
+      "order": 1,
+      "realm": "",
+      "title": "해양신산업 복합단지 조속추진",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영도구_김철훈-02",
+      "order": 2,
+      "realm": "",
+      "title": "도심 속 명품 힐링지: 태종대권 해양관광레저 거점 도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영도구_김철훈-03",
+      "order": 3,
+      "realm": "",
+      "title": "바다 위의 정원도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영도구_김철훈-04",
+      "order": 4,
+      "realm": "",
+      "title": "빈집해결을 위한 영도형 ‘어반 캔버스(Urban Canvas)’프로젝트",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영도구_김철훈-05",
+      "order": 5,
+      "realm": "",
+      "title": "영도형 촘촘한 복지체계 구축",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

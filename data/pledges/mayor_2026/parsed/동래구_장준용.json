@@ -1,0 +1,65 @@
+{
+  "politician": "장준용",
+  "hanja_name": "張埈龍",
+  "party": "국민의힘",
+  "office": "동래구",
+  "sido": "부산광역시",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100161689",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-동래구_장준용-01",
+      "order": 1,
+      "realm": "",
+      "title": "AI+자연+안전이 결합된 부산형 교육친화 공원 조성(금강공원 재정비 사업)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-동래구_장준용-02",
+      "order": 2,
+      "realm": "",
+      "title": "부산을 뜨겁게!! 동래를 핫하게!!",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-동래구_장준용-03",
+      "order": 3,
+      "realm": "",
+      "title": "대한민국 교육 1번지 완성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-동래구_장준용-04",
+      "order": 4,
+      "realm": "",
+      "title": "글로벌 역사문화 관광 거점화로 활력 넘치는 지역 경제 생태계 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-동래구_장준용-05",
+      "order": 5,
+      "realm": "",
+      "title": "안전하고 든든한 행정으로, 모두가 행복한 생활 구현",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

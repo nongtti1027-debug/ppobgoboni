@@ -1,0 +1,65 @@
+{
+  "politician": "김신",
+  "hanja_name": "金信",
+  "party": "무소속",
+  "office": "완도군",
+  "sido": "전라남도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100159672",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-완도군_김신-01",
+      "order": 1,
+      "realm": "",
+      "title": "전복 산업 대전환 + 수산 클러스터 구축",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-완도군_김신-02",
+      "order": 2,
+      "realm": "",
+      "title": " 지역거점 공공의료원 유치 + 응급의료체계 완성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-완도군_김신-03",
+      "order": 3,
+      "realm": "",
+      "title": "연륙·연도교 건설 + 해남-완도 철도 (교통혁명)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-완도군_김신-04",
+      "order": 4,
+      "realm": "",
+      "title": "중대형 호텔·리조트 3개 이상 유치 + 해양관광 대전환",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-완도군_김신-05",
+      "order": 5,
+      "realm": "",
+      "title": "청년 정착 + 일자리 창출 (인구소멸 대응)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

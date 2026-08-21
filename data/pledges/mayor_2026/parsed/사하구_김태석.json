@@ -1,0 +1,65 @@
+{
+  "politician": "김태석",
+  "hanja_name": "金泰碩",
+  "party": "더불어민주당",
+  "office": "사하구",
+  "sido": "부산광역시",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100154670",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-사하구_김태석-01",
+      "order": 1,
+      "realm": "",
+      "title": "구민과 함께하는 스마트 행정 추진",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-사하구_김태석-02",
+      "order": 2,
+      "realm": "",
+      "title": "청소년이 미래를 꿈꾸게 하는 사하",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-사하구_김태석-03",
+      "order": 3,
+      "realm": "",
+      "title": "생활밀착형 복지·안전 도시 사하 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-사하구_김태석-04",
+      "order": 4,
+      "realm": "",
+      "title": "땅의 가치 UP, 삶의 질 향상 '명품 주거도시' 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-사하구_김태석-05",
+      "order": 5,
+      "realm": "",
+      "title": "산과 강, 바다가 어울리는 친환경 생태도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

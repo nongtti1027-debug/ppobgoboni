@@ -1,0 +1,65 @@
+{
+  "politician": "천기옥",
+  "hanja_name": "千琪玉",
+  "party": "국민의힘",
+  "office": "동구",
+  "sido": "울산광역시",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100158728",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-동구_천기옥-01",
+      "order": 1,
+      "realm": "",
+      "title": "노동의 가치가 존중받는「활력 넘치는 산업수도 동구」",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-동구_천기옥-02",
+      "order": 2,
+      "realm": "",
+      "title": "아이와 부모가 행복한 「완전 돌봄·명품 교육도시」",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-동구_천기옥-03",
+      "order": 3,
+      "realm": "",
+      "title": "청년이 돌아오고 머무는 「청년 자강(自强) 프로젝트」",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-동구_천기옥-04",
+      "order": 4,
+      "realm": "",
+      "title": "다시 찾고 싶은 「체류형 해양 관광·디자인 도시」",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-동구_천기옥-05",
+      "order": 5,
+      "realm": "",
+      "title": "빈틈없는 복지와 쾌적한 환경 「주민 안심·상생 도시」",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

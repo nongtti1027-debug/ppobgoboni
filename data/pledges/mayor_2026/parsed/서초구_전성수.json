@@ -1,0 +1,65 @@
+{
+  "politician": "전성수",
+  "hanja_name": "全聖洙",
+  "party": "국민의힘",
+  "office": "서초구",
+  "sido": "서울특별시",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100162496",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-서초구_전성수-01",
+      "order": 1,
+      "realm": "",
+      "title": "경부간선도로 및 반포대로 지하화 추진 하겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-서초구_전성수-02",
+      "order": 2,
+      "realm": "",
+      "title": "약자와 동행, 서초형 촘촘한 복지 구현하겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-서초구_전성수-03",
+      "order": 3,
+      "realm": "",
+      "title": "녹지 보행 네트워크(서초행복길)를 구축하겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-서초구_전성수-04",
+      "order": 4,
+      "realm": "",
+      "title": "양재 AICT 허브 및 도시 첨단 물류단지 조성하겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-서초구_전성수-05",
+      "order": 5,
+      "realm": "",
+      "title": "서초 전 세대 미래 일자리 창출하겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

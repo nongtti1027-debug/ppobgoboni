@@ -1,0 +1,65 @@
+{
+  "politician": "윤희신",
+  "hanja_name": "尹熙新",
+  "party": "국민의힘",
+  "office": "태안군",
+  "sido": "충청남도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100159430",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-태안군_윤희신-01",
+      "order": 1,
+      "realm": "",
+      "title": "태안군수 직속 세일즈 기획단 도입",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-태안군_윤희신-02",
+      "order": 2,
+      "realm": "",
+      "title": "태안고속도로 및 가로림만 해상교량 추진 ",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-태안군_윤희신-03",
+      "order": 3,
+      "realm": "",
+      "title": "미래항공연구센터 연계 첨단산업단지 추진",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-태안군_윤희신-04",
+      "order": 4,
+      "realm": "",
+      "title": "반려식물 박람회 정례 개최 및 식물산업 기반 마련",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-태안군_윤희신-05",
+      "order": 5,
+      "realm": "",
+      "title": "정의로운전환 특구 전국 제1호 지정",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

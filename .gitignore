@@ -1,0 +1,36 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# env files
+.env
+.env.local
+.env*.local
+
+# db
+*.db
+*.db-journal
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# generated prisma client
+/src/generated/prisma
+
+# raw third-party campaign documents (candidate hwp/pdf/hwpx/docx originals
+# and the source zips from manifesto.or.kr) — not redistributed publicly,
+# not needed at runtime (only text_full/ + the imported DB are). Copyright
+# in these belongs to the parties/candidates.
+/data/manifesto/extracted
+/data/manifesto/zips

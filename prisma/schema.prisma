@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Politician {
+  id           String   @id @default(cuid())
+  name         String
+  hanjaName    String?
+  party        String
+  office       String // e.g. "대통령", "서울특별시장", "경기도지사"
+  region       String // sido name, "전국" for president
+  level        String // president | governor | mayor | assembly
+  electionName String
+  electionDate DateTime?
+  sgId         String // NEC 선거ID
+  sgTypecode   String // NEC 선거종류코드
+  huboid       String? // NEC 후보자/당선인ID
+  photoUrl     String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  pledges Pledge[]
+
+  // 한국매니페스토실천본부 질의서 회신 원문 (선거 전 후보 인터뷰 형식 — NEC 공약과는 별개 자료)
+  manifestoText       String?
+  manifestoSourceFile String?
+  manifestoImportedAt DateTime?
+
+  @@unique([sgId, huboid])
+  @@index([region])
+  @@index([level])
+}
+
+model Pledge {
+  id           String   @id @default(cuid())
+  politicianId String
+  politician   Politician @relation(fields: [politicianId], references: [id], onDelete: Cascade)
+
+  order   Int
+  realm   String? // 공약분야 (경제·산업, 정치·사법 등)
+  source  String  @default("nec") // nec(중앙선거관리위원회 제출 공식 선거공약) | manifesto(한국매니페스토실천본부 제출 10대 핵심공약)
+  title   String
+  goal    String // 목표
+  method  String // 이행방법
+  timeline String // 이행기간
+  funding String // 재원조달방안
+
+  // 확정형(수치·기한 등 검증 가능) vs 선언형(구호성, 판정 보류)
+  measurability String @default("unrated") // measurable | declarative | unrated
+
+  // 이행 상태 5단계 — 반드시 statusSource와 함께 기록
+  status          String    @default("unrated") // completed | in_progress | partial | delayed | failed | unrated
+  statusNote      String?
+  statusSource    String? // 판정 근거 출처 URL/설명
+  statusCheckedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([politicianId])
+  @@index([status])
+}

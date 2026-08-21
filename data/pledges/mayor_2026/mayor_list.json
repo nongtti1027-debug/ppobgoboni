@@ -1,0 +1,1591 @@
+[
+  {
+    "name": "유찬종",
+    "huboid": "100154016",
+    "sdName": "서울특별시",
+    "sggName": "종로구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김길성",
+    "huboid": "100163124",
+    "sdName": "서울특별시",
+    "sggName": "중구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김경대",
+    "huboid": "100154458",
+    "sdName": "서울특별시",
+    "sggName": "용산구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "유보화",
+    "huboid": "100154364",
+    "sdName": "서울특별시",
+    "sggName": "성동구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김경호",
+    "huboid": "100162595",
+    "sdName": "서울특별시",
+    "sggName": "광진구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "최동민",
+    "huboid": "100154237",
+    "sdName": "서울특별시",
+    "sggName": "동대문구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "류경기",
+    "huboid": "100163845",
+    "sdName": "서울특별시",
+    "sggName": "중랑구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이승로",
+    "huboid": "100161486",
+    "sdName": "서울특별시",
+    "sggName": "성북구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "정창수",
+    "huboid": "100165736",
+    "sdName": "서울특별시",
+    "sggName": "강북구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김동욱",
+    "huboid": "100154007",
+    "sdName": "서울특별시",
+    "sggName": "도봉구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "서준오",
+    "huboid": "100155624",
+    "sdName": "서울특별시",
+    "sggName": "노원구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김미경",
+    "huboid": "100163092",
+    "sdName": "서울특별시",
+    "sggName": "은평구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박운기",
+    "huboid": "100154445",
+    "sdName": "서울특별시",
+    "sggName": "서대문구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "유동균",
+    "huboid": "100154576",
+    "sdName": "서울특별시",
+    "sggName": "마포구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이기재",
+    "huboid": "100162646",
+    "sdName": "서울특별시",
+    "sggName": "양천구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "진교훈",
+    "huboid": "100162985",
+    "sdName": "서울특별시",
+    "sggName": "강서구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "장인홍",
+    "huboid": "100163864",
+    "sdName": "서울특별시",
+    "sggName": "구로구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "최기찬",
+    "huboid": "100160192",
+    "sdName": "서울특별시",
+    "sggName": "금천구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "조유진",
+    "huboid": "100155777",
+    "sdName": "서울특별시",
+    "sggName": "영등포구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "류삼영",
+    "huboid": "100155877",
+    "sdName": "서울특별시",
+    "sggName": "동작구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박준희",
+    "huboid": "100161558",
+    "sdName": "서울특별시",
+    "sggName": "관악구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "전성수",
+    "huboid": "100162496",
+    "sdName": "서울특별시",
+    "sggName": "서초구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김현기",
+    "huboid": "100158841",
+    "sdName": "서울특별시",
+    "sggName": "강남구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "서강석",
+    "huboid": "100160360",
+    "sdName": "서울특별시",
+    "sggName": "송파구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이수희",
+    "huboid": "100163194",
+    "sdName": "서울특별시",
+    "sggName": "강동구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "최진봉",
+    "huboid": "100162254",
+    "sdName": "부산광역시",
+    "sggName": "중구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "공한수",
+    "huboid": "100160476",
+    "sdName": "부산광역시",
+    "sggName": "서구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "강철호",
+    "huboid": "100161624",
+    "sdName": "부산광역시",
+    "sggName": "동구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김철훈",
+    "huboid": "100154799",
+    "sdName": "부산광역시",
+    "sggName": "영도구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김영욱",
+    "huboid": "100162205",
+    "sdName": "부산광역시",
+    "sggName": "부산진구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "장준용",
+    "huboid": "100161689",
+    "sdName": "부산광역시",
+    "sggName": "동래구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "박재범",
+    "huboid": "100154429",
+    "sdName": "부산광역시",
+    "sggName": "남구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "정명희",
+    "huboid": "100156818",
+    "sdName": "부산광역시",
+    "sggName": "북구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김성수",
+    "huboid": "100161620",
+    "sdName": "부산광역시",
+    "sggName": "해운대구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "우성빈",
+    "huboid": "100159468",
+    "sdName": "부산광역시",
+    "sggName": "기장군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김태석",
+    "huboid": "100154670",
+    "sdName": "부산광역시",
+    "sggName": "사하구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "윤일현",
+    "huboid": "100162580",
+    "sdName": "부산광역시",
+    "sggName": "금정구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "박상준",
+    "huboid": "100156803",
+    "sdName": "부산광역시",
+    "sggName": "강서구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "주석수",
+    "huboid": "100161507",
+    "sdName": "부산광역시",
+    "sggName": "연제구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "강성태",
+    "huboid": "100160995",
+    "sdName": "부산광역시",
+    "sggName": "수영구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "서태경",
+    "huboid": "100154522",
+    "sdName": "부산광역시",
+    "sggName": "사상구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "류규하",
+    "huboid": "100160346",
+    "sdName": "대구광역시",
+    "sggName": "중구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "우성진",
+    "huboid": "100155802",
+    "sdName": "대구광역시",
+    "sggName": "동구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "권오상",
+    "huboid": "100154194",
+    "sdName": "대구광역시",
+    "sggName": "서구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "조재구",
+    "huboid": "100163053",
+    "sdName": "대구광역시",
+    "sggName": "남구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이근수",
+    "huboid": "100154405",
+    "sdName": "대구광역시",
+    "sggName": "북구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김대권",
+    "huboid": "100160089",
+    "sdName": "대구광역시",
+    "sggName": "수성구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김용판",
+    "huboid": "100155317",
+    "sdName": "대구광역시",
+    "sggName": "달서구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "최재훈",
+    "huboid": "100163666",
+    "sdName": "대구광역시",
+    "sggName": "달성군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김진열",
+    "huboid": "100162112",
+    "sdName": "대구광역시",
+    "sggName": "군위군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김정식",
+    "huboid": "100156594",
+    "sdName": "인천광역시",
+    "sggName": "미추홀구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이재호",
+    "huboid": "100163000",
+    "sdName": "인천광역시",
+    "sggName": "연수구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이병래",
+    "huboid": "100154310",
+    "sdName": "인천광역시",
+    "sggName": "남동구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "차준택",
+    "huboid": "100161436",
+    "sdName": "인천광역시",
+    "sggName": "부평구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박형우",
+    "huboid": "100157457",
+    "sdName": "인천광역시",
+    "sggName": "계양구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박용철",
+    "huboid": "100162891",
+    "sdName": "인천광역시",
+    "sggName": "강화군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "장정민",
+    "huboid": "100160566",
+    "sdName": "인천광역시",
+    "sggName": "옹진군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "손화정",
+    "huboid": "100157153",
+    "sdName": "인천광역시",
+    "sggName": "영종구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김찬진",
+    "huboid": "100162900",
+    "sdName": "인천광역시",
+    "sggName": "제물포구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "구재용",
+    "huboid": "100158205",
+    "sdName": "인천광역시",
+    "sggName": "서구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김진규",
+    "huboid": "100154634",
+    "sdName": "인천광역시",
+    "sggName": "검단구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "임택",
+    "huboid": "100158729",
+    "sdName": "광주광역시",
+    "sggName": "동구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김이강",
+    "huboid": "100163972",
+    "sdName": "광주광역시",
+    "sggName": "서구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김병내",
+    "huboid": "100158111",
+    "sdName": "광주광역시",
+    "sggName": "남구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "신수정",
+    "huboid": "100158994",
+    "sdName": "광주광역시",
+    "sggName": "북구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박병규",
+    "huboid": "100158654",
+    "sdName": "광주광역시",
+    "sggName": "광산구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "황인호",
+    "huboid": "100154226",
+    "sdName": "대전광역시",
+    "sggName": "동구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김제선",
+    "huboid": "100163066",
+    "sdName": "대전광역시",
+    "sggName": "중구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "전문학",
+    "huboid": "100154033",
+    "sdName": "대전광역시",
+    "sggName": "서구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "정용래",
+    "huboid": "100163126",
+    "sdName": "대전광역시",
+    "sggName": "유성구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김찬술",
+    "huboid": "100154870",
+    "sdName": "대전광역시",
+    "sggName": "대덕구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김영길",
+    "huboid": "100162960",
+    "sdName": "울산광역시",
+    "sggName": "중구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "임현철",
+    "huboid": "100154806",
+    "sdName": "울산광역시",
+    "sggName": "남구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "천기옥",
+    "huboid": "100158728",
+    "sdName": "울산광역시",
+    "sggName": "동구",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이동권",
+    "huboid": "100154368",
+    "sdName": "울산광역시",
+    "sggName": "북구",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이순걸",
+    "huboid": "100163313",
+    "sdName": "울산광역시",
+    "sggName": "울주군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이재준",
+    "huboid": "100163860",
+    "sdName": "경기도",
+    "sggName": "수원시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "신상진",
+    "huboid": "100163411",
+    "sdName": "경기도",
+    "sggName": "성남시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김원기",
+    "huboid": "100156125",
+    "sdName": "경기도",
+    "sggName": "의정부시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "최대호",
+    "huboid": "100161957",
+    "sdName": "경기도",
+    "sggName": "안양시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박승원",
+    "huboid": "100161445",
+    "sdName": "경기도",
+    "sggName": "광명시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "최원용",
+    "huboid": "100153870",
+    "sdName": "경기도",
+    "sggName": "평택시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "정덕영",
+    "huboid": "100154479",
+    "sdName": "경기도",
+    "sggName": "양주시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박형덕",
+    "huboid": "100162748",
+    "sdName": "경기도",
+    "sggName": "동두천시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이민근",
+    "huboid": "100162786",
+    "sdName": "경기도",
+    "sggName": "안산시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "민경선",
+    "huboid": "100155611",
+    "sdName": "경기도",
+    "sggName": "고양시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "신계용",
+    "huboid": "100162856",
+    "sdName": "경기도",
+    "sggName": "과천시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김성제",
+    "huboid": "100162723",
+    "sdName": "경기도",
+    "sggName": "의왕시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "신동화",
+    "huboid": "100154423",
+    "sdName": "경기도",
+    "sggName": "구리시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "최현덕",
+    "huboid": "100154668",
+    "sdName": "경기도",
+    "sggName": "남양주시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "조용호",
+    "huboid": "100158921",
+    "sdName": "경기도",
+    "sggName": "오산시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "임병택",
+    "huboid": "100161693",
+    "sdName": "경기도",
+    "sggName": "시흥시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "한대희",
+    "huboid": "100154482",
+    "sdName": "경기도",
+    "sggName": "군포시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이현재",
+    "huboid": "100163196",
+    "sdName": "경기도",
+    "sggName": "하남시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "손배찬",
+    "huboid": "100154507",
+    "sdName": "경기도",
+    "sggName": "파주시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이충우",
+    "huboid": "100162573",
+    "sdName": "경기도",
+    "sggName": "여주시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "성수석",
+    "huboid": "100154893",
+    "sdName": "경기도",
+    "sggName": "이천시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이상일",
+    "huboid": "100162849",
+    "sdName": "경기도",
+    "sggName": "용인시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김보라",
+    "huboid": "100162796",
+    "sdName": "경기도",
+    "sggName": "안성시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이기형",
+    "huboid": "100156825",
+    "sdName": "경기도",
+    "sggName": "김포시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박관열",
+    "huboid": "100153835",
+    "sdName": "경기도",
+    "sggName": "광주시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "백영현",
+    "huboid": "100162868",
+    "sdName": "경기도",
+    "sggName": "포천시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김덕현",
+    "huboid": "100161733",
+    "sdName": "경기도",
+    "sggName": "연천군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "전진선",
+    "huboid": "100162432",
+    "sdName": "경기도",
+    "sggName": "양평군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "서태원",
+    "huboid": "100163623",
+    "sdName": "경기도",
+    "sggName": "가평군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "조용익",
+    "huboid": "100161476",
+    "sdName": "경기도",
+    "sggName": "부천시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "정명근",
+    "huboid": "100160956",
+    "sdName": "경기도",
+    "sggName": "화성시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이장섭",
+    "huboid": "100154752",
+    "sdName": "충청북도",
+    "sggName": "청주시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이동석",
+    "huboid": "100154335",
+    "sdName": "충청북도",
+    "sggName": "충주시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이상천",
+    "huboid": "100153952",
+    "sdName": "충청북도",
+    "sggName": "제천시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김문근",
+    "huboid": "100161025",
+    "sdName": "충청북도",
+    "sggName": "단양군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "정영철",
+    "huboid": "100161763",
+    "sdName": "충청북도",
+    "sggName": "영동군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "최재형",
+    "huboid": "100162213",
+    "sdName": "충청북도",
+    "sggName": "보은군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "황규철",
+    "huboid": "100158951",
+    "sdName": "충청북도",
+    "sggName": "옥천군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "조병옥",
+    "huboid": "100162677",
+    "sdName": "충청북도",
+    "sggName": "음성군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김명식",
+    "huboid": "100158298",
+    "sdName": "충청북도",
+    "sggName": "진천군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "송인헌",
+    "huboid": "100163201",
+    "sdName": "충청북도",
+    "sggName": "괴산군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이재영",
+    "huboid": "100162033",
+    "sdName": "충청북도",
+    "sggName": "증평군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "최원철",
+    "huboid": "100161314",
+    "sdName": "충청남도",
+    "sggName": "공주시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "엄승용",
+    "huboid": "100156967",
+    "sdName": "충청남도",
+    "sggName": "보령시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "오세현",
+    "huboid": "100163850",
+    "sdName": "충청남도",
+    "sggName": "아산시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이완섭",
+    "huboid": "100162794",
+    "sdName": "충청남도",
+    "sggName": "서산시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "윤희신",
+    "huboid": "100159430",
+    "sdName": "충청남도",
+    "sggName": "태안군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "문정우",
+    "huboid": "100159379",
+    "sdName": "충청남도",
+    "sggName": "금산군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "백성현",
+    "huboid": "100162268",
+    "sdName": "충청남도",
+    "sggName": "논산시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이응우",
+    "huboid": "100163636",
+    "sdName": "충청남도",
+    "sggName": "계룡시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이용우",
+    "huboid": "100158308",
+    "sdName": "충청남도",
+    "sggName": "부여군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "유승광",
+    "huboid": "100159444",
+    "sdName": "충청남도",
+    "sggName": "서천군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박정주",
+    "huboid": "100158881",
+    "sdName": "충청남도",
+    "sggName": "홍성군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김홍열",
+    "huboid": "100158459",
+    "sdName": "충청남도",
+    "sggName": "청양군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "최재구",
+    "huboid": "100162827",
+    "sdName": "충청남도",
+    "sggName": "예산군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김기재",
+    "huboid": "100154262",
+    "sdName": "충청남도",
+    "sggName": "당진시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "장기수",
+    "huboid": "100155038",
+    "sdName": "충청남도",
+    "sggName": "천안시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "강성휘",
+    "huboid": "100154453",
+    "sdName": "전라남도",
+    "sggName": "목포시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "서영학",
+    "huboid": "100155926",
+    "sdName": "전라남도",
+    "sggName": "여수시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "손훈모",
+    "huboid": "100154578",
+    "sdName": "전라남도",
+    "sggName": "순천시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "윤병태",
+    "huboid": "100159254",
+    "sdName": "전라남도",
+    "sggName": "나주시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박성현",
+    "huboid": "100154755",
+    "sdName": "전라남도",
+    "sggName": "광양시",
+    "party": "무소속"
+  },
+  {
+    "name": "박종원",
+    "huboid": "100159766",
+    "sdName": "전라남도",
+    "sggName": "담양군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김한종",
+    "huboid": "100159900",
+    "sdName": "전라남도",
+    "sggName": "장성군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "조상래",
+    "huboid": "100162127",
+    "sdName": "전라남도",
+    "sggName": "곡성군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "장길선",
+    "huboid": "100158337",
+    "sdName": "전라남도",
+    "sggName": "구례군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "공영민",
+    "huboid": "100164457",
+    "sdName": "전라남도",
+    "sggName": "고흥군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김철우",
+    "huboid": "100159879",
+    "sdName": "전라남도",
+    "sggName": "보성군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "임지락",
+    "huboid": "100159565",
+    "sdName": "전라남도",
+    "sggName": "화순군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "사순문",
+    "huboid": "100159482",
+    "sdName": "전라남도",
+    "sggName": "장흥군",
+    "party": "조국혁신당"
+  },
+  {
+    "name": "강진원",
+    "huboid": "100162004",
+    "sdName": "전라남도",
+    "sggName": "강진군",
+    "party": "무소속"
+  },
+  {
+    "name": "김신",
+    "huboid": "100159672",
+    "sdName": "전라남도",
+    "sggName": "완도군",
+    "party": "무소속"
+  },
+  {
+    "name": "명현관",
+    "huboid": "100161349",
+    "sdName": "전라남도",
+    "sggName": "해남군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이재각",
+    "huboid": "100158406",
+    "sdName": "전라남도",
+    "sggName": "진도군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "우승희",
+    "huboid": "100159607",
+    "sdName": "전라남도",
+    "sggName": "영암군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김산",
+    "huboid": "100161183",
+    "sdName": "전라남도",
+    "sggName": "무안군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "장세일",
+    "huboid": "100160676",
+    "sdName": "전라남도",
+    "sggName": "영광군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이남오",
+    "huboid": "100159559",
+    "sdName": "전라남도",
+    "sggName": "함평군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김태성",
+    "huboid": "100159704",
+    "sdName": "전라남도",
+    "sggName": "신안군",
+    "party": "조국혁신당"
+  },
+  {
+    "name": "박용선",
+    "huboid": "100154073",
+    "sdName": "경상북도",
+    "sggName": "포항시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "남한권",
+    "huboid": "100163336",
+    "sdName": "경상북도",
+    "sggName": "울릉군",
+    "party": "무소속"
+  },
+  {
+    "name": "주낙영",
+    "huboid": "100158547",
+    "sdName": "경상북도",
+    "sggName": "경주시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "배낙호",
+    "huboid": "100161954",
+    "sdName": "경상북도",
+    "sggName": "김천시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "권기창",
+    "huboid": "100161712",
+    "sdName": "경상북도",
+    "sggName": "안동시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김장호",
+    "huboid": "100161869",
+    "sdName": "경상북도",
+    "sggName": "구미시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "황병직",
+    "huboid": "100153885",
+    "sdName": "경상북도",
+    "sggName": "영주시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김병삼",
+    "huboid": "100154245",
+    "sdName": "경상북도",
+    "sggName": "영천시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "안재민",
+    "huboid": "100154756",
+    "sdName": "경상북도",
+    "sggName": "상주시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김학홍",
+    "huboid": "100154216",
+    "sdName": "경상북도",
+    "sggName": "문경시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "안병윤",
+    "huboid": "100159497",
+    "sdName": "경상북도",
+    "sggName": "예천군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "조현일",
+    "huboid": "100160682",
+    "sdName": "경상북도",
+    "sggName": "경산시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "박권현",
+    "huboid": "100159842",
+    "sdName": "경상북도",
+    "sggName": "청도군",
+    "party": "무소속"
+  },
+  {
+    "name": "이남철",
+    "huboid": "100162618",
+    "sdName": "경상북도",
+    "sggName": "고령군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "전화식",
+    "huboid": "100158732",
+    "sdName": "경상북도",
+    "sggName": "성주군",
+    "party": "무소속"
+  },
+  {
+    "name": "김재욱",
+    "huboid": "100162448",
+    "sdName": "경상북도",
+    "sggName": "칠곡군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "최유철",
+    "huboid": "100159421",
+    "sdName": "경상북도",
+    "sggName": "의성군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "윤경희",
+    "huboid": "100159080",
+    "sdName": "경상북도",
+    "sggName": "청송군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "오도창",
+    "huboid": "100161607",
+    "sdName": "경상북도",
+    "sggName": "영양군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "조주홍",
+    "huboid": "100159545",
+    "sdName": "경상북도",
+    "sggName": "영덕군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "최기영",
+    "huboid": "100158824",
+    "sdName": "경상북도",
+    "sggName": "봉화군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "황이주",
+    "huboid": "100159499",
+    "sdName": "경상북도",
+    "sggName": "울진군",
+    "party": "무소속"
+  },
+  {
+    "name": "조규일",
+    "huboid": "100163051",
+    "sdName": "경상남도",
+    "sggName": "진주시",
+    "party": "무소속"
+  },
+  {
+    "name": "강석주",
+    "huboid": "100157697",
+    "sdName": "경상남도",
+    "sggName": "통영시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "하학열",
+    "huboid": "100159308",
+    "sdName": "경상남도",
+    "sggName": "고성군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "박동식",
+    "huboid": "100162961",
+    "sdName": "경상남도",
+    "sggName": "사천시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "정영두",
+    "huboid": "100154419",
+    "sdName": "경상남도",
+    "sggName": "김해시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "안병구",
+    "huboid": "100164187",
+    "sdName": "경상남도",
+    "sggName": "밀양시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "변광용",
+    "huboid": "100163067",
+    "sdName": "경상남도",
+    "sggName": "거제시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "오태완",
+    "huboid": "100164784",
+    "sdName": "경상남도",
+    "sggName": "의령군",
+    "party": "무소속"
+  },
+  {
+    "name": "차석호",
+    "huboid": "100164463",
+    "sdName": "경상남도",
+    "sggName": "함안군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "성낙인",
+    "huboid": "100161575",
+    "sdName": "경상남도",
+    "sggName": "창녕군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "나동연",
+    "huboid": "100162067",
+    "sdName": "경상남도",
+    "sggName": "양산시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김현수",
+    "huboid": "100160777",
+    "sdName": "경상남도",
+    "sggName": "하동군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "류경완",
+    "huboid": "100161024",
+    "sdName": "경상남도",
+    "sggName": "남해군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "진병영",
+    "huboid": "100163073",
+    "sdName": "경상남도",
+    "sggName": "함양군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "유명현",
+    "huboid": "100158967",
+    "sdName": "경상남도",
+    "sggName": "산청군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이홍기",
+    "huboid": "100158505",
+    "sdName": "경상남도",
+    "sggName": "거창군",
+    "party": "무소속"
+  },
+  {
+    "name": "김윤철",
+    "huboid": "100161711",
+    "sdName": "경상남도",
+    "sggName": "합천군",
+    "party": "무소속"
+  },
+  {
+    "name": "강기윤",
+    "huboid": "100154126",
+    "sdName": "경상남도",
+    "sggName": "창원시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "육동한",
+    "huboid": "100161433",
+    "sdName": "강원특별자치도",
+    "sggName": "춘천시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "구자열",
+    "huboid": "100153887",
+    "sdName": "강원특별자치도",
+    "sggName": "원주시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김중남",
+    "huboid": "100154106",
+    "sdName": "강원특별자치도",
+    "sggName": "강릉시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이정학",
+    "huboid": "100155866",
+    "sdName": "강원특별자치도",
+    "sggName": "동해시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "박상수",
+    "huboid": "100161949",
+    "sdName": "강원특별자치도",
+    "sggName": "삼척시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "이상호",
+    "huboid": "100162480",
+    "sdName": "강원특별자치도",
+    "sggName": "태백시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "최승준",
+    "huboid": "100162887",
+    "sdName": "강원특별자치도",
+    "sggName": "정선군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이병선",
+    "huboid": "100162392",
+    "sdName": "강원특별자치도",
+    "sggName": "속초시",
+    "party": "국민의힘"
+  },
+  {
+    "name": "함명준",
+    "huboid": "100160161",
+    "sdName": "강원특별자치도",
+    "sggName": "고성군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김정중",
+    "huboid": "100158374",
+    "sdName": "강원특별자치도",
+    "sggName": "양양군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "최상기",
+    "huboid": "100163065",
+    "sdName": "강원특별자치도",
+    "sggName": "인제군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "신영재",
+    "huboid": "100162136",
+    "sdName": "강원특별자치도",
+    "sggName": "홍천군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "장신상",
+    "huboid": "100159399",
+    "sdName": "강원특별자치도",
+    "sggName": "횡성군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김길수",
+    "huboid": "100159127",
+    "sdName": "강원특별자치도",
+    "sggName": "영월군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "심재국",
+    "huboid": "100161176",
+    "sdName": "강원특별자치도",
+    "sggName": "평창군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "김세훈",
+    "huboid": "100158943",
+    "sdName": "강원특별자치도",
+    "sggName": "화천군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김왕규",
+    "huboid": "100160581",
+    "sdName": "강원특별자치도",
+    "sggName": "양구군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김동일",
+    "huboid": "100158762",
+    "sdName": "강원특별자치도",
+    "sggName": "철원군",
+    "party": "국민의힘"
+  },
+  {
+    "name": "조지훈",
+    "huboid": "100154441",
+    "sdName": "전북특별자치도",
+    "sggName": "전주시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "김재준",
+    "huboid": "100153863",
+    "sdName": "전북특별자치도",
+    "sggName": "군산시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "최정호",
+    "huboid": "100154556",
+    "sdName": "전북특별자치도",
+    "sggName": "익산시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "이학수",
+    "huboid": "100163655",
+    "sdName": "전북특별자치도",
+    "sggName": "정읍시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "양충모",
+    "huboid": "100154499",
+    "sdName": "전북특별자치도",
+    "sggName": "남원시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "정성주",
+    "huboid": "100163513",
+    "sdName": "전북특별자치도",
+    "sggName": "김제시",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "유희태",
+    "huboid": "100161540",
+    "sdName": "전북특별자치도",
+    "sggName": "완주군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "전춘성",
+    "huboid": "100159517",
+    "sdName": "전북특별자치도",
+    "sggName": "진안군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "황인홍",
+    "huboid": "100161544",
+    "sdName": "전북특별자치도",
+    "sggName": "무주군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "최훈식",
+    "huboid": "100160494",
+    "sdName": "전북특별자치도",
+    "sggName": "장수군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "한득수",
+    "huboid": "100160282",
+    "sdName": "전북특별자치도",
+    "sggName": "임실군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "최영일",
+    "huboid": "100163638",
+    "sdName": "전북특별자치도",
+    "sggName": "순창군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "심덕섭",
+    "huboid": "100159182",
+    "sdName": "전북특별자치도",
+    "sggName": "고창군",
+    "party": "더불어민주당"
+  },
+  {
+    "name": "권익현",
+    "huboid": "100159616",
+    "sdName": "전북특별자치도",
+    "sggName": "부안군",
+    "party": "더불어민주당"
+  }
+]

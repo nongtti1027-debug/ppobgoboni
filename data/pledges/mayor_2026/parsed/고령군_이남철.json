@@ -1,0 +1,65 @@
+{
+  "politician": "이남철",
+  "hanja_name": "李楠喆",
+  "party": "국민의힘",
+  "office": "고령군",
+  "sido": "경상북도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100162618",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-고령군_이남철-01",
+      "order": 1,
+      "realm": "",
+      "title": "대가야의 심장, 낙동강에 그리는 미래",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-고령군_이남철-02",
+      "order": 2,
+      "realm": "",
+      "title": "청년의 선택, 활력 넘치는 고령",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-고령군_이남철-03",
+      "order": 3,
+      "realm": "",
+      "title": "상권부터 산업까지 혁신하는 지역경제와 스마트를 심고 행복을 거두는 농업대전환",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-고령군_이남철-04",
+      "order": 4,
+      "realm": "",
+      "title": "사람을 잇는, 머물고 싶은 도시",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-고령군_이남철-05",
+      "order": 5,
+      "realm": "",
+      "title": "따뜻한 복지, 모두의 배움터 조성 및AI로 열고 사람을 잇는 행정",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "politician": "박권현",
+  "hanja_name": "朴權鉉",
+  "party": "무소속",
+  "office": "청도군",
+  "sido": "경상북도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100159842",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-청도군_박권현-01",
+      "order": 1,
+      "realm": "",
+      "title": "민생혁신 - 주머니는 두둑하게, 민생은 든든하게",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-청도군_박권현-02",
+      "order": 2,
+      "realm": "",
+      "title": "미래육성 - 아이들이 꿈꾸고, 청년이 남는 청도",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-청도군_박권현-03",
+      "order": 3,
+      "realm": "",
+      "title": "공간도약 - 사통팔달 시원하게, 살기는 편안하게",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-청도군_박권현-04",
+      "order": 4,
+      "realm": "",
+      "title": "상생동행 - 누구도 외롭지 않게, 다 함께 행복하게",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-청도군_박권현-05",
+      "order": 5,
+      "realm": "",
+      "title": "행정쇄신 - 군청의 문턱은 낮게, 군민은 하늘처럼",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

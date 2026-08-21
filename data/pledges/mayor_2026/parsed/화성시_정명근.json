@@ -1,0 +1,65 @@
+{
+  "politician": "정명근",
+  "hanja_name": "鄭明根",
+  "party": "더불어민주당",
+  "office": "화성시",
+  "sido": "경기도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100160956",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-화성시_정명근-01",
+      "order": 1,
+      "realm": "",
+      "title": "【AI】AI 공무원 코리봇(KORIBOT) 임용",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-화성시_정명근-02",
+      "order": 2,
+      "realm": "",
+      "title": "【협치】화성동행기구 신설",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-화성시_정명근-03",
+      "order": 3,
+      "realm": "",
+      "title": "【민생】지역화폐 1조원 지속 발행",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-화성시_정명근-04",
+      "order": 4,
+      "realm": "",
+      "title": "광역·시내·급행버스 확대 및 공항버스 노선 확충",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-화성시_정명근-05",
+      "order": 5,
+      "realm": "",
+      "title": "【교통】화성순환철도 구축 준비 (타당성 연구용역 시행)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

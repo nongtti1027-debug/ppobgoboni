@@ -1,0 +1,65 @@
+{
+  "politician": "김진열",
+  "hanja_name": "金鎭烈",
+  "party": "국민의힘",
+  "office": "군위군",
+  "sido": "대구광역시",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100162112",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-군위군_김진열-01",
+      "order": 1,
+      "realm": "",
+      "title": "공항과 군부대로 완성되는 기회의 땅 군위",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-군위군_김진열-02",
+      "order": 2,
+      "realm": "",
+      "title": "누구나 살고싶은 정주도시 군위",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-군위군_김진열-03",
+      "order": 3,
+      "realm": "",
+      "title": "지속가능한 농촌공동체 군위",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-군위군_김진열-04",
+      "order": 4,
+      "realm": "",
+      "title": "전 국민이 찾아오는 매력도시 군위",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-군위군_김진열-05",
+      "order": 5,
+      "realm": "",
+      "title": "교육과 돌봄이 든든한 행복도시 군위",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

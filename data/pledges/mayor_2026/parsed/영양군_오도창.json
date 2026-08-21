@@ -1,0 +1,65 @@
+{
+  "politician": "오도창",
+  "hanja_name": "吳道昌",
+  "party": "국민의힘",
+  "office": "영양군",
+  "sido": "경상북도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100161607",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-영양군_오도창-01",
+      "order": 1,
+      "realm": "",
+      "title": "영양형 기본소득 ‘전군민 평생연금’ 지급",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영양군_오도창-02",
+      "order": 2,
+      "realm": "",
+      "title": "영양 ‘햇빛연금 소득마을’ 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영양군_오도창-03",
+      "order": 3,
+      "realm": "",
+      "title": "도심형 명품 임대주거단지 조성(舊현대연립)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영양군_오도창-04",
+      "order": 4,
+      "realm": "",
+      "title": "프리미엄 복합문화공간 ‘영양컨벤션센터’ 건립",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영양군_오도창-05",
+      "order": 5,
+      "realm": "",
+      "title": "국립 영양자작누리 치유의 숲 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "politician": "안재민",
+  "hanja_name": "安宰民",
+  "party": "국민의힘",
+  "office": "상주시",
+  "sido": "경상북도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100154756",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-상주시_안재민-01",
+      "order": 1,
+      "realm": "",
+      "title": "국가농식품클러스터 및 식품대기업 유치를 통한식품산업도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-상주시_안재민-02",
+      "order": 2,
+      "realm": "",
+      "title": "관광 활성화 및 소비 순환체계 구축을 통한 체류형 관광도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-상주시_안재민-03",
+      "order": 3,
+      "realm": "",
+      "title": "국토의 중심 상주, 스포츠는 미래! 스포츠 메가시티 프로젝트 추진",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-상주시_안재민-04",
+      "order": 4,
+      "realm": "",
+      "title": "심뇌혈관·소아응급센터 구축을 통한 의료 안심도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-상주시_안재민-05",
+      "order": 5,
+      "realm": "",
+      "title": "농촌 인력혁신 및 가격안정 기반 구축을 통한 지속가능 농업 도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

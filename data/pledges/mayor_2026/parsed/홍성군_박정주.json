@@ -1,0 +1,65 @@
+{
+  "politician": "박정주",
+  "hanja_name": "朴貞柱",
+  "party": "국민의힘",
+  "office": "홍성군",
+  "sido": "충청남도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100158881",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-홍성군_박정주-01",
+      "order": 1,
+      "realm": "",
+      "title": "홍성경제 살리기 일자리 창출 (지역경제 32개 분야)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-홍성군_박정주-02",
+      "order": 2,
+      "realm": "",
+      "title": "농어촌과 축산 경쟁력 강화 (농·축·수산·환경 32개 분야)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-홍성군_박정주-03",
+      "order": 3,
+      "realm": "",
+      "title": "문화와 관광이 살아있는 홍성 (문화·체육·관광 28개 분야)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-홍성군_박정주-04",
+      "order": 4,
+      "realm": "",
+      "title": "신뢰받는 행정 경쟁력 있는 교육 따뜻하고 촘촘한 복지 (행정·교육·복지 31개 분야)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-홍성군_박정주-05",
+      "order": 5,
+      "realm": "",
+      "title": "어느 지역도 소외되지 않는 균형 홍성 (읍·면 균형발전 31개 분야)",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

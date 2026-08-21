@@ -1,0 +1,65 @@
+{
+  "politician": "진교훈",
+  "hanja_name": "陳校薰",
+  "party": "더불어민주당",
+  "office": "강서구",
+  "sido": "서울특별시",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100162985",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-강서구_진교훈-01",
+      "order": 1,
+      "realm": "",
+      "title": "모두가 살기좋고 상생하는 균형성장을 이루어내겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-강서구_진교훈-02",
+      "order": 2,
+      "realm": "",
+      "title": "일자리가 넘쳐나는 글로벌 혁신경제도시를 만들겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-강서구_진교훈-03",
+      "order": 3,
+      "realm": "",
+      "title": "사통팔달 교통망을 확충하고 안전한 일상생활을 지키겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-강서구_진교훈-04",
+      "order": 4,
+      "realm": "",
+      "title": "출산에서 노년까지 든든한 생애복지를 실현하겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-강서구_진교훈-05",
+      "order": 5,
+      "realm": "",
+      "title": "품격있고 지속가능한 교육문화도시를 만들겠습니다.",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

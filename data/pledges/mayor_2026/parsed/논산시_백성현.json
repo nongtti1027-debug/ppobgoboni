@@ -1,0 +1,65 @@
+{
+  "politician": "백성현",
+  "hanja_name": "白星鉉",
+  "party": "국민의힘",
+  "office": "논산시",
+  "sido": "충청남도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100162268",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-논산시_백성현-01",
+      "order": 1,
+      "realm": "",
+      "title": "국가방위산업 자립 경제도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-논산시_백성현-02",
+      "order": 2,
+      "realm": "",
+      "title": "체류형 관광.문화도시 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-논산시_백성현-03",
+      "order": 3,
+      "realm": "",
+      "title": "교육.청년.복지 통합도시 구축",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-논산시_백성현-04",
+      "order": 4,
+      "realm": "",
+      "title": "스마트 농업. 역경제 활성화",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-논산시_백성현-05",
+      "order": 5,
+      "realm": "",
+      "title": "안전.균형 발전 도시 인프라 구축",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

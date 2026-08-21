@@ -1,0 +1,65 @@
+{
+  "politician": "조주홍",
+  "hanja_name": "趙周洪",
+  "party": "국민의힘",
+  "office": "영덕군",
+  "sido": "경상북도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100159545",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-영덕군_조주홍-01",
+      "order": 1,
+      "realm": "",
+      "title": "예산 1조원 시대 개막",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영덕군_조주홍-02",
+      "order": 2,
+      "realm": "",
+      "title": "영덕에너지개발공사 설립추진",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영덕군_조주홍-03",
+      "order": 3,
+      "realm": "",
+      "title": "스마트 실버 클러스터 조성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영덕군_조주홍-04",
+      "order": 4,
+      "realm": "",
+      "title": "700억 기채 상환",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-영덕군_조주홍-05",
+      "order": 5,
+      "realm": "",
+      "title": "2,000만 관광객 시대, 고래불 · 삼사 호텔 & 리조트 조성        민자유치",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}

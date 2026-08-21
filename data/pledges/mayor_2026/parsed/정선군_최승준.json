@@ -1,0 +1,65 @@
+{
+  "politician": "최승준",
+  "hanja_name": "崔乘俊",
+  "party": "더불어민주당",
+  "office": "정선군",
+  "sido": "강원특별자치도",
+  "election": "제9회 전국동시지방선거",
+  "election_date": "2026-06-03",
+  "sgId": "20260603",
+  "sgTypecode": "4",
+  "cnddtId": "100162887",
+  "pledge_count": 5,
+  "pledges": [
+    {
+      "id": "mayor-정선군_최승준-01",
+      "order": 1,
+      "realm": "",
+      "title": "군민 기본 소득 지속 지급  ",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-정선군_최승준-02",
+      "order": 2,
+      "realm": "",
+      "title": "정선의 혈맥을 여는 교통 혁신  ",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-정선군_최승준-03",
+      "order": 3,
+      "realm": "",
+      "title": "가리왕산 올림픽문화유산을 활용한 산림형 국가공원 지정 ",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-정선군_최승준-04",
+      "order": 4,
+      "realm": "",
+      "title": "강원랜드 글로벌 카지노 리조트 육성",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    },
+    {
+      "id": "mayor-정선군_최승준-05",
+      "order": 5,
+      "realm": "",
+      "title": "태아부터 어르신까지, 평생 책임 복지",
+      "goal": "",
+      "method": "",
+      "timeline": "",
+      "funding": ""
+    }
+  ]
+}
