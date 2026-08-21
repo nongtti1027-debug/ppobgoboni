@@ -98,6 +98,21 @@ function parseTop10(section3: string): Top10Item[] {
     const titleMatch = block.match(/공약명:?\s*(.+)/);
     const title = titleMatch ? titleMatch[1].trim() : `공약 ${cur.rank}순위`;
 
+    // The 1-2 lines right after "공약명: ..." carry the 예산추계(백만원)
+    // figure, but the notation varies by candidate: a bare number, "-"
+    // (none given), "비예산" (no dedicated budget line item), or "비예산"
+    // followed by a parenthesized figure like "(90,000)" on the next line.
+    let budget = "";
+    if (titleMatch) {
+      const afterTitle = block.slice((titleMatch.index ?? 0) + titleMatch[0].length);
+      const nextLines = afterTitle.split("\n").slice(1, 3).join("\n");
+      const noBudget = /^\s*(-|비예산)\s*$/m.test(nextLines.split("\n")[0] ?? "");
+      const numMatch = nextLines.match(/\(?([\d][\d,]*)\)?/);
+      if (numMatch) {
+        budget = `${numMatch[1]}백만원${noBudget ? " (비예산 사업 내 별도 표시분)" : ""}`;
+      }
+    }
+
     // Labels only count when they start a line (optionally after a bullet
     // marker like ❍/○/-). Without this anchor, a combined label such as
     // "❍ 이행절차 및 재원조달방안" would false-match the bare "재원조달방안"
@@ -134,7 +149,7 @@ function parseTop10(section3: string): Top10Item[] {
     if (!funding && procedure) funding = procedure;
 
     if (cur.rank >= 1 && cur.rank <= 10) {
-      items.push({ rank: cur.rank, title, budget: "", status, goal, content, procedure, funding, effect });
+      items.push({ rank: cur.rank, title, budget, status, goal, content, procedure, funding, effect });
     }
   }
   return items.sort((a, b) => a.rank - b.rank);
@@ -185,7 +200,14 @@ async function main() {
             .join("\n\n"),
           method: item.content || "(내용 없음)",
           timeline: item.procedure || "(명시 안됨)",
-          funding: [item.funding, item.effect && `[기대효과] ${item.effect}`].filter(Boolean).join("\n\n") || "(명시 안됨)",
+          funding:
+            [
+              item.budget && `[예산추계] ${item.budget}`,
+              item.funding,
+              item.effect && `[기대효과] ${item.effect}`,
+            ]
+              .filter(Boolean)
+              .join("\n\n") || "(명시 안됨)",
         },
       });
     }
