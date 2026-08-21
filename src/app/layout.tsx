@@ -6,6 +6,8 @@ import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
+const naverSiteVerification = process.env.NAVER_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -19,6 +21,12 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
+  },
+  verification: {
+    ...(googleSiteVerification ? { google: googleSiteVerification } : {}),
+    ...(naverSiteVerification
+      ? { other: { "naver-site-verification": naverSiteVerification } }
+      : {}),
   },
 };
 
