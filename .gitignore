@@ -34,3 +34,6 @@ next-env.d.ts
 # in these belongs to the parties/candidates.
 /data/manifesto/extracted
 /data/manifesto/zips
+
+.vercel
+.env*

@@ -9,7 +9,9 @@
     "lint": "eslint",
     "postinstall": "prisma generate",
     "db:seed": "tsx prisma/seed.ts",
-    "import:pledges": "tsx scripts/import-pledges.ts"
+    "db:apply:turso": "tsx scripts/turso-apply-migrations.ts",
+    "import:pledges": "tsx scripts/import-pledges.ts",
+    "import:manifesto": "tsx scripts/import-manifesto.ts && tsx scripts/parse-manifesto-top10.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.17.4",
