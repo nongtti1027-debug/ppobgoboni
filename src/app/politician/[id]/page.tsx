@@ -5,6 +5,8 @@ import { partyColor, SOURCE_LABELS } from "@/lib/constants";
 import { StatusBadge } from "@/components/StatusBadge";
 import { StatusDistributionBar } from "@/components/StatusDistributionBar";
 import { AdSlot } from "@/components/AdSlot";
+import { CommentSection } from "@/components/CommentSection";
+import { getCommentsForPolitician } from "@/lib/comments";
 
 export default async function PoliticianPage({
   params,
@@ -18,6 +20,8 @@ export default async function PoliticianPage({
   });
 
   if (!politician) notFound();
+
+  const comments = await getCommentsForPolitician(politician.id);
 
   const counts = politician.pledges.reduce<Record<string, number>>((acc, pl) => {
     acc[pl.status] = (acc[pl.status] ?? 0) + 1;
@@ -88,6 +92,13 @@ export default async function PoliticianPage({
         <p className="mt-8 text-xs text-foreground/40">
           ※ 대표적인 공약이며, 병국미래연구소에서 판단한 이행율입니다.
         </p>
+
+        <div className="mt-10 border-t border-border pt-8">
+          <CommentSection
+            apiPath={`/api/politician/${politician.id}/comments`}
+            initialComments={comments}
+          />
+        </div>
       </div>
 
       <aside className="hidden lg:block">

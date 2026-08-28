@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { VerdictBadge } from "@/components/VerdictBadge";
 import { AdSlot } from "@/components/AdSlot";
+import { CommentSection } from "@/components/CommentSection";
+import { getCommentsForFactCheck } from "@/lib/comments";
 
 export default async function FactCheckDetailPage({
   params,
@@ -16,6 +18,8 @@ export default async function FactCheckDetailPage({
   });
 
   if (!check) notFound();
+
+  const comments = await getCommentsForFactCheck(check.id);
 
   return (
     <main className="mx-auto grid max-w-5xl gap-8 px-4 py-10 lg:grid-cols-[1fr_300px]">
@@ -64,6 +68,13 @@ export default async function FactCheckDetailPage({
             확인일: {check.checkedAt.toLocaleDateString("ko-KR")}
           </p>
         </article>
+
+        <div className="mt-8 rounded-2xl border border-border bg-card p-6">
+          <CommentSection
+            apiPath={`/api/factcheck/${check.id}/comments`}
+            initialComments={comments}
+          />
+        </div>
       </div>
 
       <aside className="hidden lg:block">

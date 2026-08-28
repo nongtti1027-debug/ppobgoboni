@@ -29,6 +29,7 @@ model Politician {
 
   pledges    Pledge[]
   factChecks FactCheck[]
+  comments   Comment[]
 
   // 한국매니페스토실천본부 질의서 회신 원문 (선거 전 후보 인터뷰 형식 — NEC 공약과는 별개 자료)
   manifestoText       String?
@@ -91,4 +92,31 @@ model FactCheck {
 
   @@index([politicianId])
   @@index([verdict])
+  comments FactCheckComment[]
+}
+
+model Comment {
+  id           String     @id @default(cuid())
+  politicianId String
+  politician   Politician @relation(fields: [politicianId], references: [id], onDelete: Cascade)
+
+  author  String
+  content String
+
+  createdAt DateTime @default(now())
+
+  @@index([politicianId])
+}
+
+model FactCheckComment {
+  id          String    @id @default(cuid())
+  factCheckId String
+  factCheck   FactCheck @relation(fields: [factCheckId], references: [id], onDelete: Cascade)
+
+  author  String
+  content String
+
+  createdAt DateTime @default(now())
+
+  @@index([factCheckId])
 }

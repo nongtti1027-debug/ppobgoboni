@@ -4,8 +4,14 @@ import { LEVEL_LABELS, partyColor } from "@/lib/constants";
 import { StatusDistributionBar } from "@/components/StatusDistributionBar";
 import { PartyStats } from "@/components/PartyStats";
 import { AdSlot } from "@/components/AdSlot";
+import { VerdictBadge } from "@/components/VerdictBadge";
 
 export default async function HomePage() {
+  const recentFactChecks = await prisma.factCheck.findMany({
+    orderBy: { checkedAt: "desc" },
+    take: 5,
+  });
+
   const politicians = await prisma.politician.findMany({
     orderBy: [{ level: "asc" }, { region: "asc" }],
     include: { pledges: { select: { status: true } } },
@@ -40,6 +46,36 @@ export default async function HomePage() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
       <AdSlot position="header" />
+
+      {recentFactChecks.length > 0 && (
+        <section className="mt-6">
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-foreground/60">최근 팩트체크</h2>
+            <Link href="/factcheck" className="text-xs text-accent hover:underline">
+              전체 보기 →
+            </Link>
+          </div>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {recentFactChecks.map((c) => (
+              <li key={c.id}>
+                <Link
+                  href={`/factcheck/${c.id}`}
+                  className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 py-3 transition hover:border-accent hover:shadow-sm"
+                >
+                  <span className="min-w-0 truncate text-sm">
+                    <span className="font-medium">{c.politicianName}</span>
+                    <span className="text-foreground/50">
+                      {" "}
+                      &ldquo;{c.claim}&rdquo;
+                    </span>
+                  </span>
+                  <VerdictBadge verdict={c.verdict} />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="mt-6 mb-10 grid gap-6 rounded-2xl border border-border bg-card p-6 sm:p-8 lg:grid-cols-[1.4fr_1fr]">
         <div>
