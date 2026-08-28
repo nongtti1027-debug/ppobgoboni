@@ -10,9 +10,11 @@ export function Header() {
             {SITE_NAME}
           </span>
         </Link>
-        <p className="hidden text-sm text-foreground/50 sm:block">
-          공약, 지금 얼마나 지켜지고 있을까요?
-        </p>
+        <nav className="flex items-center gap-4 text-sm font-medium">
+          <Link href="/factcheck" className="text-foreground/70 hover:text-accent">
+            팩트체크
+          </Link>
+        </nav>
       </div>
     </header>
   );

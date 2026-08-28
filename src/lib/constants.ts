@@ -35,6 +35,25 @@ export const SOURCE_LABELS: Record<string, string> = {
   manifesto: "한국매니페스토실천본부 제출 10대 핵심공약",
 };
 
+// PolitiFact Truth-O-Meter식 6단계 판정
+export const VERDICT_LABELS: Record<string, string> = {
+  true: "사실",
+  mostly_true: "대체로 사실",
+  half_true: "절반의 사실",
+  mostly_false: "대체로 사실 아님",
+  false: "사실 아님",
+  unverifiable: "판단 보류",
+};
+
+export const VERDICT_COLORS: Record<string, { bg: string; text: string; dot: string }> = {
+  true: { bg: "bg-emerald-50", text: "text-emerald-700", dot: "bg-emerald-500" },
+  mostly_true: { bg: "bg-lime-50", text: "text-lime-700", dot: "bg-lime-500" },
+  half_true: { bg: "bg-amber-50", text: "text-amber-700", dot: "bg-amber-500" },
+  mostly_false: { bg: "bg-orange-50", text: "text-orange-700", dot: "bg-orange-500" },
+  false: { bg: "bg-rose-50", text: "text-rose-700", dot: "bg-rose-500" },
+  unverifiable: { bg: "bg-gray-100", text: "text-gray-500", dot: "bg-gray-400" },
+};
+
 export const LEVEL_LABELS: Record<string, string> = {
   president: "대통령",
   governor: "광역단체장",

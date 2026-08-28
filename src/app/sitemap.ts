@@ -11,9 +11,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const politicians = await prisma.politician.findMany({
     select: { id: true, updatedAt: true },
   });
+  const factChecks = await prisma.factCheck.findMany({
+    select: { id: true, updatedAt: true },
+  });
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteUrl, changeFrequency: "daily", priority: 1 },
+    { url: `${siteUrl}/factcheck`, changeFrequency: "daily", priority: 0.8 },
     { url: `${siteUrl}/about`, changeFrequency: "monthly", priority: 0.3 },
     { url: `${siteUrl}/privacy`, changeFrequency: "yearly", priority: 0.2 },
   ];
@@ -25,5 +29,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...politicianRoutes];
+  const factCheckRoutes: MetadataRoute.Sitemap = factChecks.map((c) => ({
+    url: `${siteUrl}/factcheck/${c.id}`,
+    lastModified: c.updatedAt,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...politicianRoutes, ...factCheckRoutes];
 }
