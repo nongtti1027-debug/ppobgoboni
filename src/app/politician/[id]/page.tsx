@@ -74,12 +74,20 @@ export default async function PoliticianPage({
           </div>
 
           {avgProgress !== null && (
-            <div className="mt-4 flex items-baseline gap-2 border-t border-border pt-4">
-              <span className="text-xs font-medium text-foreground/50">평균 이행 진도율</span>
-              <span className="text-2xl font-bold text-brand">{avgProgress}%</span>
-              <span className="text-xs text-foreground/40">
-                (판정 완료 {ratedNecPledges.length}/{necPledges.length}개 공약 기준)
-              </span>
+            <div className="mt-4 border-t border-border pt-4">
+              <div className="flex items-baseline gap-2">
+                <span className="text-xs font-medium text-foreground/50">평균 이행 진도율</span>
+                <span className="text-2xl font-bold text-brand">{avgProgress}%</span>
+                <span className="text-xs text-foreground/40">
+                  (판정 완료 {ratedNecPledges.length}/{necPledges.length}개 공약 기준)
+                </span>
+              </div>
+              <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-gray-100">
+                <div
+                  className="h-full rounded-full bg-accent"
+                  style={{ width: `${avgProgress}%` }}
+                />
+              </div>
             </div>
           )}
         </header>
