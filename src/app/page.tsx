@@ -33,15 +33,48 @@ export default async function HomePage() {
     }, {}),
   ).map(([party, count]) => ({ party, count }));
 
-  const groups = politicians.reduce<Record<string, typeof politicians>>(
-    (acc, p) => {
-      (acc[p.level] ??= []).push(p);
-      return acc;
-    },
-    {},
-  );
-  const levelOrder = ["president", "governor", "mayor", "assembly"];
-  const visibleLevels = levelOrder.filter((level) => groups[level]?.length);
+  const president = politicians.filter((p) => p.level === "president");
+  const assembly = politicians.filter((p) => p.level === "assembly");
+
+  const SIDO_ORDER = [
+    "서울특별시",
+    "부산광역시",
+    "대구광역시",
+    "인천광역시",
+    "광주광역시",
+    "대전광역시",
+    "울산광역시",
+    "세종특별자치시",
+    "경기도",
+    "강원특별자치도",
+    "충청북도",
+    "충청남도",
+    "전북특별자치도",
+    "전라남도",
+    "경상북도",
+    "경상남도",
+    "제주특별자치도",
+  ];
+
+  const regionMap = new Map<
+    string,
+    { governor?: (typeof politicians)[number]; mayors: typeof politicians }
+  >();
+  for (const p of politicians) {
+    if (p.level !== "governor" && p.level !== "mayor") continue;
+    const entry = regionMap.get(p.region) ?? { mayors: [] };
+    if (p.level === "governor") entry.governor = p;
+    else entry.mayors.push(p);
+    regionMap.set(p.region, entry);
+  }
+  const regionSections = SIDO_ORDER.filter((r) => regionMap.has(r)).map((r) => ({
+    region: r,
+    ...regionMap.get(r)!,
+  }));
+  // 목록에 없는 지역명이 데이터에 있으면 맨 뒤에라도 표시
+  for (const [region, entry] of regionMap) {
+    if (!SIDO_ORDER.includes(region)) regionSections.push({ region, ...entry });
+  }
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
@@ -109,65 +142,108 @@ export default async function HomePage() {
       {politicians.length === 0 ? (
         <p className="text-foreground/60">아직 등록된 데이터가 없습니다.</p>
       ) : (
-        visibleLevels.map((level, idx) => (
-          <div key={level}>
+        <>
+          {president.length > 0 && (
             <section className="mb-10">
               <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-brand">
-                {LEVEL_LABELS[level] ?? level}
+                {LEVEL_LABELS.president}
+              </h2>
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {president.map((p) => (
+                  <PoliticianCard key={p.id} p={p} />
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {regionSections.map((section, idx) => (
+            <div key={section.region}>
+              <section className="mb-10">
+                <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-brand">
+                  {section.region}
+                  <span className="rounded-full bg-brand/10 px-2 py-0.5 text-xs font-medium text-brand">
+                    {(section.governor ? 1 : 0) + section.mayors.length}명
+                  </span>
+                </h2>
+                <ul className="grid gap-3 sm:grid-cols-2">
+                  {section.governor && <PoliticianCard p={section.governor} />}
+                  {section.mayors.map((p) => (
+                    <PoliticianCard key={p.id} p={p} />
+                  ))}
+                </ul>
+              </section>
+              {idx < regionSections.length - 1 && idx % 4 === 3 && (
+                <div className="mb-10">
+                  <AdSlot position="in-list" />
+                </div>
+              )}
+            </div>
+          ))}
+
+          {assembly.length > 0 && (
+            <section className="mb-10">
+              <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-brand">
+                {LEVEL_LABELS.assembly}
                 <span className="rounded-full bg-brand/10 px-2 py-0.5 text-xs font-medium text-brand">
-                  {groups[level].length}명
+                  {assembly.length}명
                 </span>
               </h2>
               <ul className="grid gap-3 sm:grid-cols-2">
-                {groups[level].map((p) => {
-                  const counts = p.pledges.reduce<Record<string, number>>((acc, pl) => {
-                    acc[pl.status] = (acc[pl.status] ?? 0) + 1;
-                    return acc;
-                  }, {});
-                  return (
-                    <li key={p.id}>
-                      <Link
-                        href={`/politician/${p.id}`}
-                        className="flex items-stretch gap-3 rounded-lg border border-border bg-card p-4 transition hover:border-accent hover:shadow-sm"
-                      >
-                        <span
-                          className="w-1 shrink-0 rounded-full"
-                          style={{ backgroundColor: partyColor(p.party) }}
-                        />
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-baseline justify-between gap-2">
-                            <span className="font-medium">{p.name}</span>
-                            <span
-                              className="shrink-0 text-xs font-medium"
-                              style={{ color: partyColor(p.party) }}
-                            >
-                              {p.party}
-                            </span>
-                          </div>
-                          <div className="mt-1 text-sm text-foreground/60">
-                            {p.office} · 공약 {p.pledges.length}개
-                          </div>
-                          <div className="mt-3">
-                            <StatusDistributionBar counts={counts} total={p.pledges.length} />
-                          </div>
-                        </div>
-                      </Link>
-                    </li>
-                  );
-                })}
+                {assembly.map((p) => (
+                  <PoliticianCard key={p.id} p={p} />
+                ))}
               </ul>
             </section>
-            {idx < visibleLevels.length - 1 && (
-              <div className="mb-10">
-                <AdSlot position="in-list" />
-              </div>
-            )}
-          </div>
-        ))
+          )}
+        </>
       )}
 
       <AdSlot position="bottom" />
     </main>
+  );
+}
+
+function PoliticianCard({
+  p,
+}: {
+  p: {
+    id: string;
+    name: string;
+    party: string;
+    office: string;
+    pledges: { status: string }[];
+  };
+}) {
+  const counts = p.pledges.reduce<Record<string, number>>((acc, pl) => {
+    acc[pl.status] = (acc[pl.status] ?? 0) + 1;
+    return acc;
+  }, {});
+  return (
+    <li>
+      <Link
+        href={`/politician/${p.id}`}
+        className="flex items-stretch gap-3 rounded-lg border border-border bg-card p-4 transition hover:border-accent hover:shadow-sm"
+      >
+        <span
+          className="w-1 shrink-0 rounded-full"
+          style={{ backgroundColor: partyColor(p.party) }}
+        />
+        <div className="min-w-0 flex-1">
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="font-medium">{p.name}</span>
+            <span className="shrink-0 text-xs font-medium" style={{ color: partyColor(p.party) }}>
+              {p.party}
+            </span>
+          </div>
+          <div className="mt-1 text-sm text-foreground/60">
+            {p.office} · 공약 {p.pledges.length}개
+          </div>
+          <div className="mt-3">
+            <StatusDistributionBar counts={counts} total={p.pledges.length} />
+          </div>
+        </div>
+      </Link>
+    </li>
   );
 }
 

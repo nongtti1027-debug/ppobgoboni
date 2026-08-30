@@ -118,7 +118,7 @@ export default async function PoliticianPage({
         )}
 
         <p className="mt-8 text-xs text-foreground/40">
-          ※ 대표적인 공약이며, BK에서 판단한 이행율입니다.
+          ※ 대표적인 공약이며, BK미래연구소에서 판단한 이행율입니다.
         </p>
 
         <div className="mt-10 border-t border-border pt-8">
