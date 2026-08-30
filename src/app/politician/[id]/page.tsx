@@ -4,6 +4,7 @@ import { prisma } from "@/lib/db";
 import { partyColor, SOURCE_LABELS } from "@/lib/constants";
 import { StatusBadge } from "@/components/StatusBadge";
 import { StatusDistributionBar } from "@/components/StatusDistributionBar";
+import { ProgressBar } from "@/components/ProgressBar";
 import { AdSlot } from "@/components/AdSlot";
 import { CommentSection } from "@/components/CommentSection";
 import { getCommentsForPolitician } from "@/lib/comments";
@@ -30,6 +31,14 @@ export default async function PoliticianPage({
 
   const necPledges = politician.pledges.filter((p) => p.source === "nec");
   const manifestoPledges = politician.pledges.filter((p) => p.source === "manifesto");
+
+  const ratedNecPledges = necPledges.filter((p) => p.status !== "unrated");
+  const avgProgress = ratedNecPledges.length
+    ? Math.round(
+        ratedNecPledges.reduce((sum, p) => sum + p.progressPercent, 0) /
+          ratedNecPledges.length,
+      )
+    : null;
 
   return (
     <main className="mx-auto grid max-w-5xl gap-8 px-4 py-10 lg:grid-cols-[1fr_300px]">
@@ -62,6 +71,16 @@ export default async function PoliticianPage({
             </div>
             <StatusDistributionBar counts={counts} total={politician.pledges.length} />
           </div>
+
+          {avgProgress !== null && (
+            <div className="mt-4 flex items-baseline gap-2 border-t border-border pt-4">
+              <span className="text-xs font-medium text-foreground/50">평균 이행 진도율</span>
+              <span className="text-2xl font-bold text-brand">{avgProgress}%</span>
+              <span className="text-xs text-foreground/40">
+                (판정 완료 {ratedNecPledges.length}/{necPledges.length}개 공약 기준)
+              </span>
+            </div>
+          )}
         </header>
 
         {necPledges.length > 0 && (
@@ -127,6 +146,7 @@ function PledgeGroup({
     status: string;
     statusNote: string | null;
     statusSource: string | null;
+    progressPercent: number;
   }[];
 }) {
   return (
@@ -143,6 +163,11 @@ function PledgeGroup({
             </div>
             {pledge.realm && (
               <p className="mt-1 text-xs text-foreground/40">{pledge.realm}</p>
+            )}
+            {pledge.status !== "unrated" && (
+              <div className="mt-3">
+                <ProgressBar percent={pledge.progressPercent} />
+              </div>
             )}
 
             <dl className="mt-4 space-y-3 text-sm">
@@ -175,7 +200,29 @@ function PledgeGroup({
                   <dt className="font-medium text-foreground/70">판정 근거</dt>
                   <dd className="mt-1 text-foreground/80">{pledge.statusNote}</dd>
                   {pledge.statusSource && (
-                    <dd className="mt-1 text-xs text-foreground/40">출처: {pledge.statusSource}</dd>
+                    <dd className="mt-1 text-xs text-foreground/40">
+                      출처:{" "}
+                      {pledge.statusSource
+                        .split("\n")
+                        .filter(Boolean)
+                        .map((src, i) =>
+                          src.startsWith("http") ? (
+                            <a
+                              key={i}
+                              href={src}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-accent underline"
+                            >
+                              {src}
+                            </a>
+                          ) : (
+                            <span key={i} className="block">
+                              {src}
+                            </span>
+                          ),
+                        )}
+                    </dd>
                   )}
                 </div>
               )}

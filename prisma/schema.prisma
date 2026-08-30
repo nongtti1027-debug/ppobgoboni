@@ -64,6 +64,11 @@ model Pledge {
   statusSource    String? // 판정 근거 출처 URL/설명
   statusCheckedAt DateTime?
 
+  // 진도율 보조 지표 (0-100) — 판정을 대체하지 않는 시각화 보조 수치.
+  // 판정전 0 / 검토·계획수립중 10 / 제도적착수 30 / 본격추진중 55 / 마무리단계 80 / 완료 100
+  // 지연·보류는 마지막 도달 단계 값을 유지, 폐기·철회는 0
+  progressPercent Int @default(0)
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
