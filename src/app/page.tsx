@@ -165,8 +165,12 @@ export default async function HomePage() {
                     {(section.governor ? 1 : 0) + section.mayors.length}명
                   </span>
                 </h2>
+                {section.governor && (
+                  <div className="mb-3">
+                    <PoliticianCard p={section.governor} highlight />
+                  </div>
+                )}
                 <ul className="grid gap-3 sm:grid-cols-2">
-                  {section.governor && <PoliticianCard p={section.governor} />}
                   {section.mayors.map((p) => (
                     <PoliticianCard key={p.id} p={p} />
                   ))}
@@ -205,6 +209,7 @@ export default async function HomePage() {
 
 function PoliticianCard({
   p,
+  highlight,
 }: {
   p: {
     id: string;
@@ -213,38 +218,50 @@ function PoliticianCard({
     office: string;
     pledges: { status: string }[];
   };
+  highlight?: boolean;
 }) {
   const counts = p.pledges.reduce<Record<string, number>>((acc, pl) => {
     acc[pl.status] = (acc[pl.status] ?? 0) + 1;
     return acc;
   }, {});
-  return (
-    <li>
-      <Link
-        href={`/politician/${p.id}`}
-        className="flex items-stretch gap-3 rounded-lg border border-border bg-card p-4 transition hover:border-accent hover:shadow-sm"
-      >
-        <span
-          className="w-1 shrink-0 rounded-full"
-          style={{ backgroundColor: partyColor(p.party) }}
-        />
-        <div className="min-w-0 flex-1">
-          <div className="flex items-baseline justify-between gap-2">
-            <span className="font-medium">{p.name}</span>
-            <span className="shrink-0 text-xs font-medium" style={{ color: partyColor(p.party) }}>
-              {p.party}
-            </span>
-          </div>
-          <div className="mt-1 text-sm text-foreground/60">
-            {p.office} · 공약 {p.pledges.length}개
-          </div>
-          <div className="mt-3">
-            <StatusDistributionBar counts={counts} total={p.pledges.length} />
-          </div>
+  const link = (
+    <Link
+      href={`/politician/${p.id}`}
+      className={
+        highlight
+          ? "flex items-stretch gap-4 rounded-xl border-2 border-brand bg-brand/5 p-5 transition hover:shadow-sm"
+          : "flex items-stretch gap-3 rounded-lg border border-border bg-card p-4 transition hover:border-accent hover:shadow-sm"
+      }
+    >
+      <span
+        className={highlight ? "w-1.5 shrink-0 rounded-full" : "w-1 shrink-0 rounded-full"}
+        style={{ backgroundColor: partyColor(p.party) }}
+      />
+      <div className="min-w-0 flex-1">
+        <div className="flex items-baseline justify-between gap-2">
+          <span className="flex items-center gap-2">
+            {highlight && (
+              <span className="rounded-full bg-brand px-2 py-0.5 text-[11px] font-semibold text-white">
+                광역단체장
+              </span>
+            )}
+            <span className={highlight ? "text-lg font-bold" : "font-medium"}>{p.name}</span>
+          </span>
+          <span className="shrink-0 text-xs font-medium" style={{ color: partyColor(p.party) }}>
+            {p.party}
+          </span>
         </div>
-      </Link>
-    </li>
+        <div className="mt-1 text-sm text-foreground/60">
+          {p.office} · 공약 {p.pledges.length}개
+        </div>
+        <div className="mt-3">
+          <StatusDistributionBar counts={counts} total={p.pledges.length} />
+        </div>
+      </div>
+    </Link>
   );
+
+  return highlight ? link : <li>{link}</li>;
 }
 
 function Stat({ label, value }: { label: string; value: string | number }) {
