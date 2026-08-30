@@ -5,6 +5,7 @@ import { partyColor, SOURCE_LABELS } from "@/lib/constants";
 import { StatusBadge } from "@/components/StatusBadge";
 import { StatusDistributionBar } from "@/components/StatusDistributionBar";
 import { ProgressBar } from "@/components/ProgressBar";
+import { ProgressChecklist } from "@/components/ProgressChecklist";
 import { AdSlot } from "@/components/AdSlot";
 import { CommentSection } from "@/components/CommentSection";
 import { getCommentsForPolitician } from "@/lib/comments";
@@ -109,7 +110,7 @@ export default async function PoliticianPage({
         )}
 
         <p className="mt-8 text-xs text-foreground/40">
-          ※ 대표적인 공약이며, 병국미래연구소에서 판단한 이행율입니다.
+          ※ 대표적인 공약이며, BK에서 판단한 이행율입니다.
         </p>
 
         <div className="mt-10 border-t border-border pt-8">
@@ -147,6 +148,7 @@ function PledgeGroup({
     statusNote: string | null;
     statusSource: string | null;
     progressPercent: number;
+    progressBreakdown: string | null;
   }[];
 }) {
   return (
@@ -176,10 +178,19 @@ function PledgeGroup({
                 <dd className="mt-1 whitespace-pre-line text-foreground/90">{pledge.goal}</dd>
               </div>
 
+              {pledge.progressBreakdown && (
+                <div>
+                  <dt className="font-medium text-foreground/70">이행방법 세부 진행도</dt>
+                  <dd className="mt-2">
+                    <ProgressChecklist json={pledge.progressBreakdown} />
+                  </dd>
+                </div>
+              )}
+
               <details className="group">
                 <summary className="cursor-pointer select-none font-medium text-foreground/70 marker:content-none">
                   <span className="inline-flex items-center gap-1">
-                    이행방법
+                    이행방법 원문
                     <span className="text-foreground/40 transition group-open:rotate-90">›</span>
                   </span>
                 </summary>

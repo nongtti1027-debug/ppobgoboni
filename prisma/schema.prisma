@@ -65,9 +65,13 @@ model Pledge {
   statusCheckedAt DateTime?
 
   // 진도율 보조 지표 (0-100) — 판정을 대체하지 않는 시각화 보조 수치.
-  // 판정전 0 / 검토·계획수립중 10 / 제도적착수 30 / 본격추진중 55 / 마무리단계 80 / 완료 100
-  // 지연·보류는 마지막 도달 단계 값을 유지, 폐기·철회는 0
+  // 이행방법의 세부 항목별 진행도(progressBreakdown)를 근거 확인된 항목만 평균낸 값.
+  // 세부 항목이 없는 공약은 기존 6단계 방식(판정전 0/검토중 10/착수 30/추진중 55/마무리 80/완료 100) 유지.
   progressPercent Int @default(0)
+
+  // 이행방법 세부 항목별 체크리스트 (JSON 배열): [{item, percent, note, source}]
+  // percent는 0/33/66/100, 근거를 찾지 못한 항목은 배열에서 제외(진도율 평균 계산에도 미포함)
+  progressBreakdown String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
