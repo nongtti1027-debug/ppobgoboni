@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { LEVEL_LABELS, partyColor } from "@/lib/constants";
 import { StatusDistributionBar } from "@/components/StatusDistributionBar";
+import { GradedProgressBar } from "@/components/GradedProgressBar";
 import { PartyStats } from "@/components/PartyStats";
 import { AdSlot } from "@/components/AdSlot";
 import { VerdictBadge } from "@/components/VerdictBadge";
@@ -14,7 +15,7 @@ export default async function HomePage() {
 
   const politicians = await prisma.politician.findMany({
     orderBy: [{ level: "asc" }, { region: "asc" }],
-    include: { pledges: { select: { status: true } } },
+    include: { pledges: { select: { status: true, progressPercent: true, source: true } } },
   });
 
   const totalPledges = politicians.reduce((sum, p) => sum + p.pledges.length, 0);
@@ -216,14 +217,14 @@ function PoliticianCard({
     name: string;
     party: string;
     office: string;
-    pledges: { status: string }[];
+    pledges: { status: string; progressPercent: number; source: string }[];
   };
   highlight?: boolean;
 }) {
-  const counts = p.pledges.reduce<Record<string, number>>((acc, pl) => {
-    acc[pl.status] = (acc[pl.status] ?? 0) + 1;
-    return acc;
-  }, {});
+  const rated = p.pledges.filter((pl) => pl.source === "nec" && pl.status !== "unrated");
+  const avgProgress = rated.length
+    ? Math.round(rated.reduce((sum, pl) => sum + pl.progressPercent, 0) / rated.length)
+    : null;
   const link = (
     <Link
       href={`/politician/${p.id}`}
@@ -255,7 +256,7 @@ function PoliticianCard({
           {p.office} · 공약 {p.pledges.length}개
         </div>
         <div className="mt-3">
-          <StatusDistributionBar counts={counts} total={p.pledges.length} />
+          <GradedProgressBar percent={avgProgress} />
         </div>
       </div>
     </Link>
