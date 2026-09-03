@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
-import { partyColor, SOURCE_LABELS } from "@/lib/constants";
+import { partyColor, SOURCE_LABELS, CONTACT_EMAIL } from "@/lib/constants";
 import { StatusBadge } from "@/components/StatusBadge";
 import { StatusDistributionBar } from "@/components/StatusDistributionBar";
 import { ProgressBar } from "@/components/ProgressBar";
@@ -137,6 +137,13 @@ export default async function PoliticianPage({
 
         <p className="mt-8 text-xs text-foreground/60">
           ※ 대표적인 공약이며, BK미래연구소에서 판단한 이행율입니다.
+          <br />
+          ※ 정치인 본인께서 직접 연락하셔서 공약 이행에 대한 소명 자료를 제시하시면 확인 후
+          반영해드립니다. (문의:{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">
+            {CONTACT_EMAIL}
+          </a>
+          )
         </p>
 
         <div className="mt-10 border-t border-border pt-8">
