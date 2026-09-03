@@ -4,6 +4,7 @@ import { SIDO_ORDER } from "@/lib/constants";
 import { PoliticianCard } from "@/components/PoliticianCard";
 import { SearchBox } from "@/components/SearchBox";
 import { PartyStats } from "@/components/PartyStats";
+import { PartyProgressStats } from "@/components/PartyProgressStats";
 import { AdSlot } from "@/components/AdSlot";
 import { VerdictBadge } from "@/components/VerdictBadge";
 import { StatusBadge } from "@/components/StatusBadge";
@@ -22,6 +23,7 @@ export default async function HomePage() {
     totalPledges,
     ratedCount,
     partyGroups,
+    ratedPledgesByParty,
   ] = await Promise.all([
     prisma.factCheck.findMany({ orderBy: { checkedAt: "desc" }, take: 5 }),
     prisma.pledge.findMany({
@@ -36,6 +38,10 @@ export default async function HomePage() {
     prisma.pledge.count(),
     prisma.pledge.count({ where: { status: { not: "unrated" } } }),
     prisma.politician.groupBy({ by: ["party"], _count: { _all: true } }),
+    prisma.pledge.findMany({
+      where: { source: "nec", status: { not: "unrated" } },
+      select: { progressPercent: true, politician: { select: { party: true } } },
+    }),
   ]);
 
   const sortedGovernors = [...governors].sort(
@@ -44,6 +50,18 @@ export default async function HomePage() {
   const partyCounts = partyGroups
     .map((g) => ({ party: g.party, count: g._count._all }))
     .sort((a, b) => b.count - a.count);
+
+  const partyProgressMap = new Map<string, { sum: number; count: number }>();
+  for (const pl of ratedPledgesByParty) {
+    const party = pl.politician.party;
+    const entry = partyProgressMap.get(party) ?? { sum: 0, count: 0 };
+    entry.sum += pl.progressPercent;
+    entry.count += 1;
+    partyProgressMap.set(party, entry);
+  }
+  const partyProgress = [...partyProgressMap.entries()]
+    .map(([party, { sum, count }]) => ({ party, average: Math.round(sum / count), count }))
+    .sort((a, b) => b.average - a.average);
 
   const hasAnyContent = totalPoliticians > 0;
 
@@ -61,6 +79,12 @@ export default async function HomePage() {
           <SearchBox />
         </div>
       </section>
+
+      {partyProgress.length > 0 && (
+        <section className="mb-10">
+          <PartyProgressStats stats={partyProgress} />
+        </section>
+      )}
 
       {hasAnyContent && (
         <section id="region-picker" className="mb-10 scroll-mt-20">
