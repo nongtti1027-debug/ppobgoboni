@@ -21,9 +21,15 @@ export function Header() {
             />
           </svg>
         </Link>
-        <nav className="flex items-center gap-4 text-sm font-medium">
-          <Link href="/factcheck" className="text-foreground/70 hover:text-accent">
+        <nav className="flex items-center gap-3 text-sm font-medium sm:gap-4">
+          <Link href="/search" className="text-foreground/80 hover:text-accent">
+            공약 찾기
+          </Link>
+          <Link href="/factcheck" className="text-foreground/80 hover:text-accent">
             팩트체크
+          </Link>
+          <Link href="/about#판정기준" className="text-foreground/80 hover:text-accent">
+            판정 기준
           </Link>
         </nav>
       </div>

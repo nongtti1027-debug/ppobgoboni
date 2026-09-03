@@ -1,109 +1,78 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
-import { LEVEL_LABELS, partyColor } from "@/lib/constants";
-import { StatusDistributionBar } from "@/components/StatusDistributionBar";
-import { GradedProgressBar } from "@/components/GradedProgressBar";
+import { SIDO_ORDER } from "@/lib/constants";
+import { PoliticianCard } from "@/components/PoliticianCard";
+import { SearchBox } from "@/components/SearchBox";
 import { PartyStats } from "@/components/PartyStats";
 import { AdSlot } from "@/components/AdSlot";
 import { VerdictBadge } from "@/components/VerdictBadge";
+import { StatusBadge } from "@/components/StatusBadge";
+
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const recentFactChecks = await prisma.factCheck.findMany({
-    orderBy: { checkedAt: "desc" },
-    take: 5,
-  });
+  const pledgeSelect = { select: { status: true, progressPercent: true, source: true } } as const;
 
-  const politicians = await prisma.politician.findMany({
-    orderBy: [{ level: "asc" }, { region: "asc" }],
-    include: { pledges: { select: { status: true, progressPercent: true, source: true } } },
-  });
+  const [
+    recentFactChecks,
+    recentJudgedPledges,
+    president,
+    governors,
+    totalPoliticians,
+    totalPledges,
+    ratedCount,
+    partyGroups,
+  ] = await Promise.all([
+    prisma.factCheck.findMany({ orderBy: { checkedAt: "desc" }, take: 5 }),
+    prisma.pledge.findMany({
+      where: { source: "nec", statusCheckedAt: { not: null } },
+      orderBy: { statusCheckedAt: "desc" },
+      take: 5,
+      include: { politician: { select: { id: true, name: true } } },
+    }),
+    prisma.politician.findFirst({ where: { level: "president" }, include: { pledges: pledgeSelect } }),
+    prisma.politician.findMany({ where: { level: "governor" }, include: { pledges: pledgeSelect } }),
+    prisma.politician.count(),
+    prisma.pledge.count(),
+    prisma.pledge.count({ where: { status: { not: "unrated" } } }),
+    prisma.politician.groupBy({ by: ["party"], _count: { _all: true } }),
+  ]);
 
-  const totalPledges = politicians.reduce((sum, p) => sum + p.pledges.length, 0);
-  const overallCounts = politicians.reduce<Record<string, number>>((acc, p) => {
-    for (const pledge of p.pledges) {
-      acc[pledge.status] = (acc[pledge.status] ?? 0) + 1;
-    }
-    return acc;
-  }, {});
-  const ratedCount = totalPledges - (overallCounts.unrated ?? 0);
+  const sortedGovernors = [...governors].sort(
+    (a, b) => SIDO_ORDER.indexOf(a.region) - SIDO_ORDER.indexOf(b.region),
+  );
+  const partyCounts = partyGroups
+    .map((g) => ({ party: g.party, count: g._count._all }))
+    .sort((a, b) => b.count - a.count);
 
-  const partyCounts = Object.entries(
-    politicians.reduce<Record<string, number>>((acc, p) => {
-      acc[p.party] = (acc[p.party] ?? 0) + 1;
-      return acc;
-    }, {}),
-  ).map(([party, count]) => ({ party, count }));
-
-  const president = politicians.filter((p) => p.level === "president");
-  const assembly = politicians.filter((p) => p.level === "assembly");
-
-  const SIDO_ORDER = [
-    "서울특별시",
-    "부산광역시",
-    "대구광역시",
-    "인천광역시",
-    "광주광역시",
-    "대전광역시",
-    "울산광역시",
-    "세종특별자치시",
-    "경기도",
-    "강원특별자치도",
-    "충청북도",
-    "충청남도",
-    "전북특별자치도",
-    "전라남도",
-    "경상북도",
-    "경상남도",
-    "제주특별자치도",
-  ];
-
-  const regionMap = new Map<
-    string,
-    { governor?: (typeof politicians)[number]; mayors: typeof politicians }
-  >();
-  for (const p of politicians) {
-    if (p.level !== "governor" && p.level !== "mayor") continue;
-    const entry = regionMap.get(p.region) ?? { mayors: [] };
-    if (p.level === "governor") entry.governor = p;
-    else entry.mayors.push(p);
-    regionMap.set(p.region, entry);
-  }
-  const regionSections = SIDO_ORDER.filter((r) => regionMap.has(r)).map((r) => ({
-    region: r,
-    ...regionMap.get(r)!,
-  }));
-  // 목록에 없는 지역명이 데이터에 있으면 맨 뒤에라도 표시
-  for (const [region, entry] of regionMap) {
-    if (!SIDO_ORDER.includes(region)) regionSections.push({ region, ...entry });
-  }
+  const hasAnyContent = totalPoliticians > 0;
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
-      <AdSlot position="header" />
+      <section className="mb-8">
+        <h1 className="break-keep text-3xl font-bold text-brand sm:text-4xl">
+          뽑았으니, 이제 확인해요.
+        </h1>
+        <p className="mt-3 max-w-2xl break-keep text-base leading-relaxed text-foreground/70">
+          중앙선거관리위원회 공식 데이터를 기반으로, 선출직 공직자가 내건 공약이 지금 어디까지
+          왔는지 근거와 함께 확인할 수 있는 곳입니다.
+        </p>
+        <div className="mt-6">
+          <SearchBox />
+        </div>
+      </section>
 
-      {recentFactChecks.length > 0 && (
-        <section className="mt-6">
-          <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-foreground/60">최근 팩트체크</h2>
-            <Link href="/factcheck" className="text-xs text-accent hover:underline">
-              전체 보기 →
-            </Link>
-          </div>
-          <ul className="grid gap-2 sm:grid-cols-2">
-            {recentFactChecks.map((c) => (
-              <li key={c.id}>
+      {hasAnyContent && (
+        <section id="region-picker" className="mb-10 scroll-mt-20">
+          <h2 className="mb-3 text-lg font-semibold text-brand">지역 선택</h2>
+          <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
+            {SIDO_ORDER.map((sido) => (
+              <li key={sido}>
                 <Link
-                  href={`/factcheck/${c.id}`}
-                  className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 py-3 transition hover:border-accent hover:shadow-sm"
+                  href={`/region/${encodeURIComponent(sido)}`}
+                  className="block break-keep rounded-lg border border-border bg-card px-3 py-2.5 text-center text-sm font-medium text-foreground/80 transition hover:border-accent hover:text-accent"
                 >
-                  <span className="min-w-0 truncate text-sm">
-                    <span className="font-medium">{c.politicianName}</span>
-                    <span className="text-foreground/50">
-                      {" "}
-                      &ldquo;{c.claim}&rdquo;
-                    </span>
-                  </span>
-                  <VerdictBadge verdict={c.verdict} />
+                  {sido}
                 </Link>
               </li>
             ))}
@@ -111,96 +80,106 @@ export default async function HomePage() {
         </section>
       )}
 
-      <section className="mt-6 mb-10 grid gap-6 rounded-2xl border border-border bg-card p-6 sm:p-8 lg:grid-cols-[1.4fr_1fr]">
-        <div>
-          <h1 className="text-2xl font-bold text-brand sm:text-3xl">
-            정치인들의 약속, 지금 어디까지 왔을까요?
-          </h1>
-          <p className="mt-2 max-w-2xl text-sm text-foreground/60 sm:text-base">
-            중앙선거관리위원회 공식 데이터를 기반으로 선거 공약과 이행 현황을 정리합니다.
-          </p>
+      {(president || sortedGovernors.length > 0) && (
+        <section className="mb-10">
+          <h2 className="mb-3 text-lg font-semibold text-brand">주요 정치인</h2>
+          {president && (
+            <div className="mb-3">
+              <PoliticianCard p={president} highlight />
+            </div>
+          )}
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {sortedGovernors.map((g) => (
+              <PoliticianCard
+                key={g.id}
+                p={g}
+                regionLinkLabel="관할 시·군·구 보기 →"
+              />
+            ))}
+          </ul>
+        </section>
+      )}
 
-          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <Stat label="등록된 정치인" value={politicians.length} />
-            <Stat label="수집된 공약" value={totalPledges} />
-            <Stat label="판정 완료" value={ratedCount} />
-            <Stat
-              label="판정률"
-              value={totalPledges ? `${Math.round((ratedCount / totalPledges) * 100)}%` : "0%"}
-            />
-          </div>
+      {(recentJudgedPledges.length > 0 || recentFactChecks.length > 0) && (
+        <section className="mb-10 grid gap-6 sm:grid-cols-2">
+          {recentJudgedPledges.length > 0 && (
+            <div>
+              <h2 className="mb-3 text-sm font-semibold text-foreground/70">최근 판정된 공약</h2>
+              <ul className="space-y-2">
+                {recentJudgedPledges.map((pl) => (
+                  <li key={pl.id}>
+                    <Link
+                      href={`/politician/${pl.politician!.id}#pledge-${pl.id}`}
+                      className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 py-3 transition hover:border-accent hover:shadow-sm"
+                    >
+                      <span className="min-w-0 truncate text-sm">
+                        <span className="font-medium">{pl.politician!.name}</span>
+                        <span className="text-foreground/60"> {pl.title}</span>
+                      </span>
+                      <StatusBadge status={pl.status} />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-          <div className="mt-5">
-            <StatusDistributionBar counts={overallCounts} total={totalPledges} />
-          </div>
+          {recentFactChecks.length > 0 && (
+            <div>
+              <div className="mb-3 flex items-center justify-between">
+                <h2 className="text-sm font-semibold text-foreground/70">최근 팩트체크</h2>
+                <Link href="/factcheck" className="text-xs text-accent hover:underline">
+                  전체 보기 →
+                </Link>
+              </div>
+              <ul className="space-y-2">
+                {recentFactChecks.map((c) => (
+                  <li key={c.id}>
+                    <Link
+                      href={`/factcheck/${c.id}`}
+                      className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 py-3 transition hover:border-accent hover:shadow-sm"
+                    >
+                      <span className="min-w-0 truncate text-sm">
+                        <span className="font-medium">{c.politicianName}</span>
+                        <span className="text-foreground/60"> &ldquo;{c.claim}&rdquo;</span>
+                      </span>
+                      <VerdictBadge verdict={c.verdict} />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      )}
+
+      <section className="mb-10 rounded-2xl border border-border bg-card p-6 sm:p-8">
+        <h2 className="mb-4 text-sm font-semibold text-foreground/70">수집 현황과 출처</h2>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <Stat label="등록된 정치인" value={totalPoliticians} />
+          <Stat label="수집된 공약" value={totalPledges} />
+          <Stat label="판정 완료" value={ratedCount} />
+          <Stat
+            label="판정률"
+            value={totalPledges ? `${Math.round((ratedCount / totalPledges) * 100)}%` : "0%"}
+          />
         </div>
-
-        <div className="border-t border-border pt-5 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6">
-          <PartyStats counts={partyCounts} />
-        </div>
+        <p className="mt-5 text-sm leading-relaxed text-foreground/70">
+          공약 원문은 중앙선거관리위원회 공식 자료를, 이행 판정 기준은{" "}
+          <Link href="/about#판정기준" className="text-accent hover:underline">
+            판정 기준 안내
+          </Link>
+          에서 자세히 볼 수 있어요.
+        </p>
       </section>
 
-      {politicians.length === 0 ? (
-        <p className="text-foreground/60">아직 등록된 데이터가 없습니다.</p>
-      ) : (
-        <>
-          {president.length > 0 && (
-            <section className="mb-10">
-              <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-brand">
-                {LEVEL_LABELS.president}
-              </h2>
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {president.map((p) => (
-                  <PoliticianCard key={p.id} p={p} />
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {regionSections.map((section, idx) => (
-            <div key={section.region}>
-              <section className="mb-10">
-                <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-brand">
-                  {section.region}
-                  <span className="rounded-full bg-brand/10 px-2 py-0.5 text-xs font-medium text-brand">
-                    {(section.governor ? 1 : 0) + section.mayors.length}명
-                  </span>
-                </h2>
-                {section.governor && (
-                  <div className="mb-3">
-                    <PoliticianCard p={section.governor} highlight />
-                  </div>
-                )}
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {section.mayors.map((p) => (
-                    <PoliticianCard key={p.id} p={p} />
-                  ))}
-                </ul>
-              </section>
-              {idx < regionSections.length - 1 && idx % 4 === 3 && (
-                <div className="mb-10">
-                  <AdSlot position="in-list" />
-                </div>
-              )}
-            </div>
-          ))}
-
-          {assembly.length > 0 && (
-            <section className="mb-10">
-              <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold text-brand">
-                {LEVEL_LABELS.assembly}
-                <span className="rounded-full bg-brand/10 px-2 py-0.5 text-xs font-medium text-brand">
-                  {assembly.length}명
-                </span>
-              </h2>
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {assembly.map((p) => (
-                  <PoliticianCard key={p.id} p={p} />
-                ))}
-              </ul>
-            </section>
-          )}
-        </>
+      {partyCounts.length > 0 && (
+        <section className="mb-10">
+          <h2 className="mb-3 text-sm font-semibold text-foreground/60">정당별 인원 (보조 정보)</h2>
+          <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <PartyStats counts={partyCounts} />
+          </div>
+        </section>
       )}
 
       <AdSlot position="bottom" />
@@ -208,68 +187,11 @@ export default async function HomePage() {
   );
 }
 
-function PoliticianCard({
-  p,
-  highlight,
-}: {
-  p: {
-    id: string;
-    name: string;
-    party: string;
-    office: string;
-    pledges: { status: string; progressPercent: number; source: string }[];
-  };
-  highlight?: boolean;
-}) {
-  const rated = p.pledges.filter((pl) => pl.source === "nec" && pl.status !== "unrated");
-  const avgProgress = rated.length
-    ? Math.round(rated.reduce((sum, pl) => sum + pl.progressPercent, 0) / rated.length)
-    : null;
-  const link = (
-    <Link
-      href={`/politician/${p.id}`}
-      className={
-        highlight
-          ? "flex items-stretch gap-4 rounded-xl border-2 border-brand bg-brand/5 p-5 transition hover:shadow-sm"
-          : "flex items-stretch gap-3 rounded-lg border border-border bg-card p-4 transition hover:border-accent hover:shadow-sm"
-      }
-    >
-      <span
-        className={highlight ? "w-1.5 shrink-0 rounded-full" : "w-1 shrink-0 rounded-full"}
-        style={{ backgroundColor: partyColor(p.party) }}
-      />
-      <div className="min-w-0 flex-1">
-        <div className="flex items-baseline justify-between gap-2">
-          <span className="flex items-center gap-2">
-            {highlight && (
-              <span className="rounded-full bg-brand px-2 py-0.5 text-[11px] font-semibold text-white">
-                광역단체장
-              </span>
-            )}
-            <span className={highlight ? "text-lg font-bold" : "font-medium"}>{p.name}</span>
-          </span>
-          <span className="shrink-0 text-xs font-medium" style={{ color: partyColor(p.party) }}>
-            {p.party}
-          </span>
-        </div>
-        <div className="mt-1 text-sm text-foreground/60">
-          {p.office} · 공약 {p.pledges.length}개
-        </div>
-        <div className="mt-3">
-          <GradedProgressBar percent={avgProgress} />
-        </div>
-      </div>
-    </Link>
-  );
-
-  return highlight ? link : <li>{link}</li>;
-}
-
 function Stat({ label, value }: { label: string; value: string | number }) {
   return (
     <div>
       <div className="text-2xl font-bold text-brand sm:text-3xl">{value}</div>
-      <div className="mt-0.5 text-xs text-foreground/50 sm:text-sm">{label}</div>
+      <div className="mt-0.5 text-sm text-foreground/60">{label}</div>
     </div>
   );
 }

@@ -74,7 +74,7 @@ export function CommentSection({
           <button
             type="submit"
             disabled={submitting}
-            className="rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90 disabled:opacity-60"
+            className="rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white hover:bg-accent/90 disabled:opacity-60"
           >
             {submitting ? "등록 중..." : "댓글 등록"}
           </button>

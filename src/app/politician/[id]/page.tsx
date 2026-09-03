@@ -53,7 +53,7 @@ export default async function PoliticianPage({
           style={{ borderTopColor: partyColor(politician.party), borderTopWidth: 4 }}
         >
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h1 className="text-2xl font-bold">{politician.name}</h1>
+            <h1 className="break-keep text-2xl font-bold">{politician.name}</h1>
             <span
               className="text-sm font-medium"
               style={{ color: partyColor(politician.party) }}
@@ -107,7 +107,7 @@ export default async function PoliticianPage({
             <summary className="cursor-pointer select-none font-semibold text-foreground/80">
               한국매니페스토실천본부 질의응답 원문
             </summary>
-            <p className="mt-2 text-xs text-foreground/40">
+            <p className="mt-2 text-xs text-foreground/60">
               선거 전 후보자가 직접 작성해 제출한 답변으로, 위 공약(중앙선거관리위원회 자료)과는 별도의
               자료입니다.
             </p>
@@ -117,7 +117,7 @@ export default async function PoliticianPage({
           </details>
         )}
 
-        <p className="mt-8 text-xs text-foreground/40">
+        <p className="mt-8 text-xs text-foreground/60">
           ※ 대표적인 공약이며, BK미래연구소에서 판단한 이행율입니다.
         </p>
 
@@ -138,6 +138,59 @@ export default async function PoliticianPage({
   );
 }
 
+function parseSources(raw: string): { label: string; url?: string }[] {
+  const lines = raw
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean);
+  const out: { label: string; url?: string }[] = [];
+  let pendingLabel: string | null = null;
+  for (const line of lines) {
+    if (line.startsWith("http")) {
+      let label = pendingLabel;
+      if (!label) {
+        try {
+          label = new URL(line).hostname.replace(/^www\./, "");
+        } catch {
+          label = line;
+        }
+      }
+      out.push({ label, url: line });
+      pendingLabel = null;
+    } else {
+      pendingLabel = line;
+    }
+  }
+  if (pendingLabel) out.push({ label: pendingLabel });
+  return out;
+}
+
+function SourceList({ raw }: { raw: string }) {
+  const sources = parseSources(raw);
+  if (sources.length === 0) return null;
+  return (
+    <ul className="mt-1.5 space-y-1 text-xs text-foreground/60">
+      {sources.map((s, i) => (
+        <li key={i}>
+          출처:{" "}
+          {s.url ? (
+            <a
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent underline"
+            >
+              {s.label}
+            </a>
+          ) : (
+            s.label
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function PledgeGroup({
   title,
   pledges,
@@ -155,6 +208,7 @@ function PledgeGroup({
     status: string;
     statusNote: string | null;
     statusSource: string | null;
+    statusCheckedAt: Date | null;
     progressPercent: number;
     progressBreakdown: string | null;
   }[];
@@ -164,15 +218,19 @@ function PledgeGroup({
       <h2 className="mb-3 text-sm font-semibold text-foreground/60">{title}</h2>
       <div className="space-y-5">
         {pledges.map((pledge) => (
-          <article key={pledge.id} className="rounded-lg border border-border bg-card p-5">
+          <article
+            key={pledge.id}
+            id={`pledge-${pledge.id}`}
+            className="scroll-mt-20 rounded-lg border border-border bg-card p-5"
+          >
             <div className="flex items-start justify-between gap-3">
-              <h3 className="font-semibold leading-snug">
+              <h3 className="break-keep font-semibold leading-snug">
                 {pledge.order}. {pledge.title}
               </h3>
               <StatusBadge status={pledge.status} />
             </div>
             {pledge.realm && (
-              <p className="mt-1 text-xs text-foreground/40">{pledge.realm}</p>
+              <p className="mt-1 text-xs text-foreground/60">{pledge.realm}</p>
             )}
             {pledge.status !== "unrated" && (
               <div className="mt-3">
@@ -180,72 +238,58 @@ function PledgeGroup({
               </div>
             )}
 
-            <dl className="mt-4 space-y-3 text-sm">
-              <div>
-                <dt className="font-medium text-foreground/70">목표</dt>
-                <dd className="mt-1 whitespace-pre-line text-foreground/90">{pledge.goal}</dd>
+            {pledge.status !== "unrated" && pledge.statusNote && (
+              <div className="mt-3 rounded-md bg-background p-3">
+                <p className="text-xs font-semibold text-foreground/70">핵심 근거 요약</p>
+                <p className="mt-1 text-sm leading-relaxed text-foreground/90">
+                  {pledge.statusNote}
+                </p>
+                {pledge.statusSource && <SourceList raw={pledge.statusSource} />}
+                {pledge.statusCheckedAt && (
+                  <p className="mt-1.5 text-xs text-foreground/50">
+                    마지막 확인: {pledge.statusCheckedAt.toLocaleDateString("ko-KR")}
+                  </p>
+                )}
               </div>
+            )}
 
-              {pledge.progressBreakdown && (
+            <details className="group mt-4">
+              <summary className="cursor-pointer select-none text-sm font-medium text-accent marker:content-none">
+                <span className="inline-flex items-center gap-1">
+                  근거 자세히 보기
+                  <span className="transition group-open:rotate-90">›</span>
+                </span>
+              </summary>
+              <dl className="mt-3 space-y-3 border-t border-border pt-3 text-sm">
                 <div>
-                  <dt className="font-medium text-foreground/70">이행방법 세부 진행도</dt>
-                  <dd className="mt-2">
-                    <ProgressChecklist json={pledge.progressBreakdown} />
-                  </dd>
+                  <dt className="font-medium text-foreground/70">목표</dt>
+                  <dd className="mt-1 whitespace-pre-line text-foreground/90">{pledge.goal}</dd>
                 </div>
-              )}
 
-              <details className="group">
-                <summary className="cursor-pointer select-none font-medium text-foreground/70 marker:content-none">
-                  <span className="inline-flex items-center gap-1">
-                    이행방법 원문
-                    <span className="text-foreground/40 transition group-open:rotate-90">›</span>
-                  </span>
-                </summary>
-                <dd className="mt-2 whitespace-pre-line text-foreground/80">{pledge.method}</dd>
-              </details>
-
-              <div>
-                <dt className="font-medium text-foreground/70">이행기간</dt>
-                <dd className="mt-1 whitespace-pre-line text-foreground/90">{pledge.timeline}</dd>
-              </div>
-              <div>
-                <dt className="font-medium text-foreground/70">재원조달방안</dt>
-                <dd className="mt-1 whitespace-pre-line text-foreground/90">{pledge.funding}</dd>
-              </div>
-
-              {pledge.status !== "unrated" && pledge.statusNote && (
-                <div className="rounded-md bg-background p-3">
-                  <dt className="font-medium text-foreground/70">판정 근거</dt>
-                  <dd className="mt-1 text-foreground/80">{pledge.statusNote}</dd>
-                  {pledge.statusSource && (
-                    <dd className="mt-1 text-xs text-foreground/40">
-                      출처:{" "}
-                      {pledge.statusSource
-                        .split("\n")
-                        .filter(Boolean)
-                        .map((src, i) =>
-                          src.startsWith("http") ? (
-                            <a
-                              key={i}
-                              href={src}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block text-accent underline"
-                            >
-                              {src}
-                            </a>
-                          ) : (
-                            <span key={i} className="block">
-                              {src}
-                            </span>
-                          ),
-                        )}
+                {pledge.progressBreakdown && (
+                  <div>
+                    <dt className="font-medium text-foreground/70">이행방법 세부 진행도</dt>
+                    <dd className="mt-2">
+                      <ProgressChecklist json={pledge.progressBreakdown} />
                     </dd>
-                  )}
+                  </div>
+                )}
+
+                <div>
+                  <dt className="font-medium text-foreground/70">이행방법 원문</dt>
+                  <dd className="mt-1 whitespace-pre-line text-foreground/80">{pledge.method}</dd>
                 </div>
-              )}
-            </dl>
+
+                <div>
+                  <dt className="font-medium text-foreground/70">이행기간</dt>
+                  <dd className="mt-1 whitespace-pre-line text-foreground/90">{pledge.timeline}</dd>
+                </div>
+                <div>
+                  <dt className="font-medium text-foreground/70">재원조달방안</dt>
+                  <dd className="mt-1 whitespace-pre-line text-foreground/90">{pledge.funding}</dd>
+                </div>
+              </dl>
+            </details>
           </article>
         ))}
       </div>

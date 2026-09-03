@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <h1 className="mb-2 text-2xl font-black">사이트 소개</h1>
-      <p className="mb-8 text-sm text-foreground/40">{SITE_NAME}가 하는 일</p>
+      <h1 className="mb-2 break-keep text-2xl font-black">사이트 소개</h1>
+      <p className="mb-8 text-sm text-foreground/60">{SITE_NAME}가 하는 일</p>
 
       <div className="space-y-6 text-sm leading-relaxed text-foreground/80">
         <section>
@@ -39,7 +39,7 @@ export default function AboutPage() {
           </ul>
         </section>
 
-        <section>
+        <section id="판정기준">
           <h2 className="mb-2 text-lg font-bold">이행 여부 판정에 대해</h2>
           <p>
             공약 이행 여부는 정부기관의 공식 인증이 아니라, 정부 자료·언론 보도 등 공개된
