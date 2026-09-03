@@ -8,7 +8,10 @@ import { ProgressBar } from "@/components/ProgressBar";
 import { ProgressChecklist } from "@/components/ProgressChecklist";
 import { AdSlot } from "@/components/AdSlot";
 import { CommentSection } from "@/components/CommentSection";
+import { RatingWidget } from "@/components/RatingWidget";
 import { getCommentsForPolitician } from "@/lib/comments";
+import { getCurrentUser } from "@/lib/auth";
+import { getRatingSummary, getUserRating } from "@/lib/ratings";
 
 export default async function PoliticianPage({
   params,
@@ -23,7 +26,12 @@ export default async function PoliticianPage({
 
   if (!politician) notFound();
 
-  const comments = await getCommentsForPolitician(politician.id);
+  const [comments, ratingSummary, currentUser] = await Promise.all([
+    getCommentsForPolitician(politician.id),
+    getRatingSummary(politician.id),
+    getCurrentUser(),
+  ]);
+  const myScore = currentUser ? await getUserRating(politician.id, currentUser.id) : null;
 
   const counts = politician.pledges.reduce<Record<string, number>>((acc, pl) => {
     acc[pl.status] = (acc[pl.status] ?? 0) + 1;
@@ -91,6 +99,16 @@ export default async function PoliticianPage({
             </div>
           )}
         </header>
+
+        <div className="mb-8">
+          <RatingWidget
+            politicianId={politician.id}
+            average={ratingSummary.average}
+            count={ratingSummary.count}
+            myScore={myScore}
+            isLoggedIn={Boolean(currentUser)}
+          />
+        </div>
 
         {necPledges.length > 0 && (
           <PledgeGroup title={SOURCE_LABELS.nec} pledges={necPledges} />
