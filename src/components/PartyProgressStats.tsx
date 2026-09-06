@@ -15,22 +15,14 @@ export function PartyProgressStats({ stats }: { stats: PartyProgress[] }) {
         {stats.map(({ party, average, count }) => {
           const color = partyColor(party);
           return (
-            <li key={party}>
-              <div className="mb-1 flex items-center justify-between text-sm">
-                <span className="font-medium" style={{ color }}>
-                  {party}
-                </span>
-                <span className="text-foreground/70">
-                  <span className="font-semibold text-foreground">{average}%</span>{" "}
-                  <span className="text-xs text-foreground/50">(공약 {count}개 기준)</span>
-                </span>
-              </div>
-              <div className="h-2.5 w-full overflow-hidden rounded-full bg-gray-100">
-                <div
-                  className="h-full rounded-full"
-                  style={{ width: `${average}%`, backgroundColor: color }}
-                />
-              </div>
+            <li key={party} className="flex items-center justify-between text-sm">
+              <span className="font-medium" style={{ color }}>
+                {party}
+              </span>
+              <span className="text-foreground/70">
+                <span className="font-semibold text-foreground">{average}%</span>{" "}
+                <span className="text-xs text-foreground/50">(공약 {count}개 기준)</span>
+              </span>
             </li>
           );
         })}
