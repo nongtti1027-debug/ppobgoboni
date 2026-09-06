@@ -11,6 +11,14 @@ export function computeAvgProgress(pledges: PledgeSlim[]) {
     : null;
 }
 
+function statusBadge(percent: number | null): { label: string; className: string } {
+  if (percent === null) return { label: "판정 전", className: "bg-gray-100 text-gray-500" };
+  if (percent >= 100) return { label: "완료", className: "bg-blue-50 text-blue-700" };
+  if (percent >= 50) return { label: "추진중", className: "bg-emerald-50 text-emerald-700" };
+  if (percent >= 30) return { label: "착수", className: "bg-amber-50 text-amber-700" };
+  return { label: "검토중", className: "bg-rose-50 text-rose-700" };
+}
+
 export function PoliticianCard({
   p,
   highlight,
@@ -29,19 +37,21 @@ export function PoliticianCard({
   regionLinkLabel?: string;
 }) {
   const avgProgress = computeAvgProgress(p.pledges);
+  const badge = statusBadge(avgProgress);
   const link = (
     <Link
       href={`/politician/${p.id}`}
       className={
         highlight
-          ? "flex items-stretch gap-4 rounded-xl border-2 border-brand bg-brand/5 p-5 transition hover:shadow-sm"
-          : "flex items-stretch gap-3 rounded-lg border border-border bg-card p-4 transition hover:border-accent hover:shadow-sm"
+          ? "flex items-stretch gap-4 rounded-xl border-2 bg-brand/5 p-5 transition hover:shadow-sm"
+          : "flex items-stretch gap-3 rounded-lg border-l-[3px] border-y border-r border-border bg-card p-4 transition hover:shadow-sm"
+      }
+      style={
+        highlight
+          ? { borderColor: partyColor(p.party) }
+          : { borderLeftColor: partyColor(p.party) }
       }
     >
-      <span
-        className={highlight ? "w-1.5 shrink-0 rounded-full" : "w-1 shrink-0 rounded-full"}
-        style={{ backgroundColor: partyColor(p.party) }}
-      />
       <div className="min-w-0 flex-1">
         <div className="flex items-baseline justify-between gap-2">
           <span className="flex items-center gap-2">
@@ -54,12 +64,18 @@ export function PoliticianCard({
               {p.name}
             </span>
           </span>
-          <span className="shrink-0 text-xs font-medium" style={{ color: partyColor(p.party) }}>
+          <span
+            className="shrink-0 rounded-full px-2 py-0.5 text-xs font-semibold"
+            style={{ backgroundColor: `${partyColor(p.party)}1a`, color: partyColor(p.party) }}
+          >
             {p.party}
           </span>
         </div>
-        <div className="mt-1 text-sm text-foreground/70">
-          {p.office} · 공약 {p.pledges.length}개
+        <div className="mt-1 flex items-center gap-2 text-sm text-foreground/70">
+          <span>{p.office} · 공약 {p.pledges.length}개</span>
+          <span className={`shrink-0 rounded-full px-1.5 py-0.5 text-[11px] font-semibold ${badge.className}`}>
+            {badge.label}
+          </span>
         </div>
         <div className="mt-3">
           <GradedProgressBar percent={avgProgress} />
