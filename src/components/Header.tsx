@@ -33,6 +33,9 @@ export async function Header() {
             <Link href="/factcheck" className="text-foreground/80 hover:text-accent">
               팩트체크
             </Link>
+            <Link href="/board" className="text-foreground/80 hover:text-accent">
+              자유게시판
+            </Link>
             <Link href="/about#판정기준" className="text-foreground/80 hover:text-accent">
               판정 기준
             </Link>

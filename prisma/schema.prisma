@@ -138,7 +138,35 @@ model User {
   nickname     String
   createdAt    DateTime @default(now())
 
-  ratings Rating[]
+  ratings      Rating[]
+  boardPosts   BoardPost[]
+  boardComments BoardComment[]
+}
+
+model BoardPost {
+  id        String   @id @default(cuid())
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  title     String
+  content   String
+  views     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  comments BoardComment[]
+
+  @@index([createdAt])
+}
+
+model BoardComment {
+  id        String    @id @default(cuid())
+  postId    String
+  post      BoardPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorId  String
+  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  content   String
+  createdAt DateTime  @default(now())
+
+  @@index([postId])
 }
 
 model Rating {

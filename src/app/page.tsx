@@ -8,6 +8,7 @@ import { PartyProgressStats } from "@/components/PartyProgressStats";
 import { AdSlot } from "@/components/AdSlot";
 import { VerdictBadge } from "@/components/VerdictBadge";
 import { StatusBadge } from "@/components/StatusBadge";
+import { UpdateBanner } from "@/components/UpdateBanner";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +25,8 @@ export default async function HomePage() {
     ratedCount,
     partyGroups,
     ratedPledgesByParty,
+    recentUpdateCount,
+    latestUpdate,
   ] = await Promise.all([
     prisma.factCheck.findMany({ orderBy: { checkedAt: "desc" }, take: 5 }),
     prisma.pledge.findMany({
@@ -41,6 +44,14 @@ export default async function HomePage() {
     prisma.pledge.findMany({
       where: { source: "nec", status: { not: "unrated" } },
       select: { progressPercent: true, politician: { select: { party: true } } },
+    }),
+    prisma.pledge.count({
+      where: { statusCheckedAt: { gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) } },
+    }),
+    prisma.pledge.findFirst({
+      where: { statusCheckedAt: { not: null } },
+      orderBy: { statusCheckedAt: "desc" },
+      select: { statusCheckedAt: true },
     }),
   ]);
 
@@ -79,6 +90,8 @@ export default async function HomePage() {
           <SearchBox />
         </div>
       </section>
+
+      <UpdateBanner recentCount={recentUpdateCount} latestDate={latestUpdate?.statusCheckedAt ?? null} />
 
       {partyProgress.length > 0 && (
         <section className="mb-10">
