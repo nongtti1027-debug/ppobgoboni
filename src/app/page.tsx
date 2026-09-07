@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
-import { SIDO_ORDER } from "@/lib/constants";
+import { SIDO_ORDER, STATUS_COLORS, VERDICT_COLORS } from "@/lib/constants";
 import { PoliticianCard } from "@/components/PoliticianCard";
 import { SearchBox } from "@/components/SearchBox";
 import { PartyStats } from "@/components/PartyStats";
@@ -147,7 +147,9 @@ export default async function HomePage() {
                   <li key={pl.id}>
                     <Link
                       href={`/politician/${pl.politician!.id}#pledge-${pl.id}`}
-                      className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 py-3 transition hover:border-accent hover:shadow-sm"
+                      className={`flex items-center justify-between gap-3 rounded-lg border border-border px-4 py-3 transition hover:border-accent hover:shadow-sm ${
+                        (STATUS_COLORS[pl.status] ?? STATUS_COLORS.unrated).bg
+                      }`}
                     >
                       <span className="min-w-0 truncate text-sm">
                         <span className="font-medium">{pl.politician!.name}</span>
@@ -174,7 +176,9 @@ export default async function HomePage() {
                   <li key={c.id}>
                     <Link
                       href={`/factcheck/${c.id}`}
-                      className="flex items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 py-3 transition hover:border-accent hover:shadow-sm"
+                      className={`flex items-center justify-between gap-3 rounded-lg border border-border px-4 py-3 transition hover:border-accent hover:shadow-sm ${
+                        (VERDICT_COLORS[c.verdict] ?? VERDICT_COLORS.unverifiable).bg
+                      }`}
                     >
                       <span className="min-w-0 truncate text-sm">
                         <span className="font-medium">{c.politicianName}</span>
