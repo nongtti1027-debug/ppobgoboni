@@ -107,8 +107,19 @@ export default async function HomePage() {
               <li key={sido}>
                 <Link
                   href={`/region/${encodeURIComponent(sido)}`}
-                  className="block break-keep rounded-lg border border-border bg-card px-3 py-2.5 text-center text-sm font-medium text-foreground/80 transition hover:border-accent hover:text-accent"
+                  className="flex items-center gap-2 break-keep rounded-lg border border-border bg-card px-3 py-2.5 text-sm font-medium text-foreground/80 transition hover:border-accent hover:text-accent"
                 >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinejoin="round"
+                      />
+                      <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="2" />
+                    </svg>
+                  </span>
                   {sido}
                 </Link>
               </li>
