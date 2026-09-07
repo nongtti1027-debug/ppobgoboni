@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { partyColor, SOURCE_LABELS, CONTACT_EMAIL } from "@/lib/constants";
 import { StatusBadge } from "@/components/StatusBadge";
-import { StatusDistributionBar } from "@/components/StatusDistributionBar";
+import { StatusStatsGrid } from "@/components/StatusStatsGrid";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ProgressChecklist } from "@/components/ProgressChecklist";
 import { AdSlot } from "@/components/AdSlot";
@@ -74,11 +74,10 @@ export default async function PoliticianPage({
           </p>
 
           <div className="mt-5">
-            <div className="mb-1.5 flex items-center justify-between text-xs text-foreground/50">
-              <span>공약 {politician.pledges.length}개</span>
-              <span>{counts.unrated ?? 0}개 판정 전</span>
+            <div className="mb-2 text-xs text-foreground/50">
+              공약 {politician.pledges.length}개
             </div>
-            <StatusDistributionBar counts={counts} total={politician.pledges.length} />
+            <StatusStatsGrid counts={counts} total={politician.pledges.length} />
           </div>
 
           {avgProgress !== null && (
