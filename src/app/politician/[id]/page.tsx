@@ -118,7 +118,15 @@ export default async function PoliticianPage({
         )}
 
         {billPledges.length > 0 && (
-          <PledgeGroup title={SOURCE_LABELS.bill} pledges={billPledges} />
+          <div>
+            <p className="mb-4 rounded-lg bg-sky-50 px-4 py-3 text-xs leading-relaxed text-sky-800">
+              국회의원(특히 비례대표)은 지역구 후보와 달리 개인 명의의 선거공약서가 없는
+              경우가 많습니다. 이 경우 실제로 대표발의한 법률안 중 정책적으로 의미 있는
+              사례를 추려 대신 추적하며, 전체 발의 목록은 국회 의안정보시스템에서 확인할
+              수 있습니다.
+            </p>
+            <PledgeGroup title={SOURCE_LABELS.bill} pledges={billPledges} />
+          </div>
         )}
 
         {manifestoPledges.length > 0 && (
