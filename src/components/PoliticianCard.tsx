@@ -5,7 +5,10 @@ import { GradedProgressBar } from "@/components/GradedProgressBar";
 type PledgeSlim = { status: string; progressPercent: number; source: string };
 
 export function computeAvgProgress(pledges: PledgeSlim[]) {
-  const rated = pledges.filter((pl) => pl.source === "nec" && pl.status !== "unrated");
+  const nec = pledges.filter((pl) => pl.source === "nec" && pl.status !== "unrated");
+  // Politicians with no NEC 선거공약서 on file (e.g. proportional-representation
+  // 국회의원) are tracked via their sponsored bills instead — see SOURCE_LABELS.bill.
+  const rated = nec.length > 0 ? nec : pledges.filter((pl) => pl.source === "bill" && pl.status !== "unrated");
   return rated.length
     ? Math.round(rated.reduce((sum, pl) => sum + pl.progressPercent, 0) / rated.length)
     : null;

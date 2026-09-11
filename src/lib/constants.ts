@@ -33,6 +33,9 @@ export const STATUS_ORDER = [
 export const SOURCE_LABELS: Record<string, string> = {
   nec: "중앙선거관리위원회 제출 공식 선거공약",
   manifesto: "한국매니페스토실천본부 제출 10대 핵심공약",
+  // 비례대표 등 개인 지역구 선거공약서가 없는 국회의원의 경우, 실제 대표발의한
+  // 법률안을 공약 대신 추적한다 (허위로 공약을 만들어내지 않기 위함).
+  bill: "국회 대표발의 법률안",
 };
 
 // PolitiFact Truth-O-Meter식 6단계 판정

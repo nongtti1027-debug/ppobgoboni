@@ -40,12 +40,16 @@ export default async function PoliticianPage({
 
   const necPledges = politician.pledges.filter((p) => p.source === "nec");
   const manifestoPledges = politician.pledges.filter((p) => p.source === "manifesto");
+  const billPledges = politician.pledges.filter((p) => p.source === "bill");
 
-  const ratedNecPledges = necPledges.filter((p) => p.status !== "unrated");
-  const avgProgress = ratedNecPledges.length
+  // Politicians with no NEC 선거공약서 on file (e.g. proportional-representation
+  // 국회의원) are tracked via their sponsored bills instead — see SOURCE_LABELS.bill.
+  const primaryPledges = necPledges.length > 0 ? necPledges : billPledges;
+  const ratedPrimaryPledges = primaryPledges.filter((p) => p.status !== "unrated");
+  const avgProgress = ratedPrimaryPledges.length
     ? Math.round(
-        ratedNecPledges.reduce((sum, p) => sum + p.progressPercent, 0) /
-          ratedNecPledges.length,
+        ratedPrimaryPledges.reduce((sum, p) => sum + p.progressPercent, 0) /
+          ratedPrimaryPledges.length,
       )
     : null;
 
@@ -86,7 +90,7 @@ export default async function PoliticianPage({
                 <span className="text-xs font-medium text-foreground/50">평균 이행 진도율</span>
                 <span className="text-2xl font-bold text-brand">{avgProgress}%</span>
                 <span className="text-xs text-foreground/40">
-                  (판정 완료 {ratedNecPledges.length}/{necPledges.length}개 공약 기준)
+                  (판정 완료 {ratedPrimaryPledges.length}/{primaryPledges.length}개 공약 기준)
                 </span>
               </div>
               <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-gray-100">
@@ -111,6 +115,10 @@ export default async function PoliticianPage({
 
         {necPledges.length > 0 && (
           <PledgeGroup title={SOURCE_LABELS.nec} pledges={necPledges} />
+        )}
+
+        {billPledges.length > 0 && (
+          <PledgeGroup title={SOURCE_LABELS.bill} pledges={billPledges} />
         )}
 
         {manifestoPledges.length > 0 && (
